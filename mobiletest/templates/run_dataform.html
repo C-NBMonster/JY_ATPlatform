@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运行数据</title>
+</head>
+<body>
+	<div class="row clearfix">
+        <div class="col-sm-12 text-center">
+            <span style="color: #1ab394; font-size: 17px; font-weight: 600">运行数据跟踪</span>
+            <hr style="height:1px;border:none;border-top:1px solid #555555;" />
+<div class="container-fluid" style="overflow-x:hidden;overflow-y:auto;height:950px;position:relative">
+	<div class="row-fluid">
+		<div class="span12">
+			<table class="table table-bordered table-striped table-hover" id="runid">
+				<thead>
+                    	<tr>
+						<th colspan="8" bgcolor="#FAEBD7">
+							<span>运行数据汇总</span>
+						</th>
+                        </tr>
+					<tr>
+						<th  style="text-align:center;">
+							<span>模块</span>
+						</th>
+						<th style="text-align:center;">
+							<span>自动化用例合计</span>
+						</th>
+						<th style="text-align:center;">
+							<span>已执行用例合计</span>
+						</th>
+						<th style="text-align:center;">
+							<span>通过合计</span>
+						</th>
+						<th style="text-align:center;">
+							<span>失败合计</span>
+						</th>
+						<th style="text-align:center;">
+							<span>执行覆盖率合计</span>
+						</th>
+						<th style="text-align:center;">
+							<span>执行通过率合计</span>
+						</th>
+                        <th style="text-align:center;">
+							<span>执行次数合计</span>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+                {% for cn in all_list %}
+					<tr>
+						<td>
+                            {{ cn.0 }}
+						</td>
+						<td>
+							{{ cn.1 }}
+						</td>
+						<td>
+							{{ cn.2 }}
+						</td>
+						<td>
+							{{ cn.3 }}
+						</td>
+						<td>
+							{{ cn.4 }}
+						</td>
+						<td>
+							{{ cn.5 }}
+						</td>
+						<td>
+							{{ cn.6 }}
+						</td>
+                        <td>
+							{{ cn.7 }}
+						</td>
+					</tr>
+                {% endfor %}
+            				</tbody>
+			</table>
+
+			<table class="table table-bordered table-striped table-hover" id="rundetail">
+				<thead>
+                     	<tr>
+						<th colspan="10" bgcolor="#FAEBD7">
+							<span>运行数据详细</span>
+						</th>
+                        </tr>
+					<tr>
+						<th style="text-align:center;">
+							<span>模块</span>
+						</th>
+						<th style="text-align:center;">
+							<span>自动化用例数</span>
+						</th>
+						<th style="text-align:center;">
+							<span>已执行用例数</span>
+						</th>
+						<th style="text-align:center;">
+							<span>通过数</span>
+						</th>
+						<th style="text-align:center;">
+							<span>失败数</span>
+						</th>
+						<th style="text-align:center;">
+							<span>执行覆盖率</span>
+						</th>
+						<th style="text-align:center;">
+							<span>执行通过率</span>
+						</th>
+                        <th style="text-align:center;">
+							<span>脚本执行次数</span>
+						</th>
+                        <th style="text-align:center;">
+							<span>执行标记</span>
+						</th>
+                       <th style="text-align:center;">
+							<span>运行时间</span>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+                {% for rundata in rundata_list %}
+					<tr>
+						<td>
+                            {{ rundata.0 }}
+						</td>
+						<td>
+							{{ rundata.1 }}
+						</td>
+						<td>
+							{{ rundata.2 }}
+						</td>
+						<td>
+							{{ rundata.3 }}
+						</td>
+						<td>
+							{{ rundata.4 }}
+						</td>
+						<td>
+							{{ rundata.5 }}
+						</td>
+						<td>
+							{{ rundata.6 }}
+						</td>
+                        <td>
+							{{ rundata.7 }}
+						</td>
+                         <td>
+							{{ rundata.9 }}
+						</td>
+                          <td>
+							{{ rundata.8 }}
+						</td>
+					</tr>
+                {% endfor %}
+            				</tbody>
+			</table>
+		</div>
+	</div>
+	</div>
+ 			</div>
+		</div>
+	</div>
+
+<span style="position:absolute; left:600px; bottom:30px;">   {# 把翻页功能固定显示在右下角#}
+<div style="position:absolute; right:950px; bottom:25px; width:100px;">
+共:{{ rundata_count }}条记录 {# 前端读取定义的变量#}
+</div>
+<div class="container" >
+
+    <ul class="pagination" id="pager">
+          {# 上一页链接开始#}
+        {% if rundata_list.has_previous %}
+            {#  如果有上一页则正常显示上一页链接#}
+            <li class="previous"><a href="/run_dataform/?page={{ rundata_list.previous_page_number }}">上一页</a></li>    {#  上一页标签 #}
+        {% else %}
+            <li class="previous disabled"><a href="#">上一页</a></li> {# 如果当前不存在上一页则上一页的链接不可点击#}
+        {% endif %}
+        {# 上一页链接开始#}
+
+        {% for num in rundata_list.paginator.page_range %}
+
+            {% if num == currentPage %}
+                <li class="item active"><a href="/run_dataform/?page={{ num }}">{{ num }}</a></li> {#显示当页数链接#}
+            {% else %}
+                <li class="item " ><a href="/run_dataform/?page={{ num }}">{{ num }}</a></li>
+            {% endif %}
+        {% endfor %}
+
+        {# 下一页链接开始#}
+        {% if rundata_list.has_next %} {#  如果有下一页则正常显示下一页链接#}
+            <li class="next"><a href="/run_dataform/?page={{ rundata_list.next_page_number }}">下一页</a></li>
+        {% else %}
+            <li class="next disabled"><a href="#">下一页</a></li>
+        {% endif %}
+        {# 下一页链接结束#}
+    </ul>
+
+</div></span>
+</body>
+</html>

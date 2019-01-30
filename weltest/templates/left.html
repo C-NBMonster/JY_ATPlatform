@@ -1,0 +1,132 @@
+﻿<!-- 作者：吴俊威  日期：2018年8月 -->
+<html>  
+<head>
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+<script src="../static/js/jquery.min.js"></script>
+<link rel="stylesheet" href="../static/css/left.css">
+<script src="../static/js/bootstrap.min.js"></script>  
+   <title>自动化测试平台</title>
+    <link rel="stylesheet" href="responsive-nav.css">
+<script src="responsive-nav.js"></script>
+<link rel="stylesheet" href="../static/resources/css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../static/resources/css/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../static/resources/css/invalid.css" type="text/css" media="screen" />
+<script type="text/javascript" src="../static/resources/scripts/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="../static/resources/scripts/simpla.jquery.configuration.js"></script>
+<script type="text/javascript" src="../static/resources/scripts/facebox.js"></script>
+<script type="text/javascript" src="../static/resources/scripts/jquery.wysiwyg.js"></script>
+<script type="text/javascript" src="../static/resources/scripts/jquery.datePicker.js"></script>
+<script type="text/javascript" src="../static/resources/scripts/jquery.date.js"></script>
+{#<style>#}
+{#ul li {#}
+{#     float: left;#}
+{#    		width: 80px;#}
+{#    		height: 40px;#}
+{#    		text-align: center;#}
+{#    		background: red;#}
+{#	}#}
+{#ul li a{#}
+{#    	display: inline-block;#}
+{#    	width:80px;#}
+{#    	height: 40px;#}
+{#    	line-height: 40px;#}
+{#}#}
+{#</style>#}
+    </head>
+    <body>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" style="margin-bottom: 0px; width:305px;" >
+        <a style='color:white; width:177px;' href="../welcome" target="mainFrame">自动化测试平台</a>
+        </nav>
+ <div id="nav">
+
+   <ul id="main-nav">
+{# <div class="container-fluid">#}
+<dl class="list_dl">
+<dt class="list_dt">
+    <span class="_after"></span>
+    <p>即有宝</p>
+    <i class="list_dt_icon"></i>
+</dt>
+<dd class="list_dd">
+    <ul>
+        <li class="list_li"><a href="../mobile_app" target="mainFrame" style='color:white'>脚本运行</a></li>
+        <li class="list_li"><a href="../param_app" target="mainFrame" style='color:white'>参数设置</a></li>
+        <li class="list_li"><a href="../medit_app" target="mainFrame" style='color:white'>数据查看</a></li>
+        <li class="list_li"><a href="../mobtest_report" target="mainFrame" style='color:white'>测试报告</a></li>
+        <li class="list_li"><a href="../Data_Verify" target="mainFrame" style='color:white'>数据比对</a></li>
+    </ul>
+</dd>
+<dt class="list_dt">
+    <span class="_after"></span>
+    <p>即有生活</p>
+    <i class="list_dt_icon"></i>
+</dt>
+<dd class="list_dd">
+    <ul>
+        <li class="list_li"><a href="../live_run" target="mainFrame" style='color:white'>脚本运行</a></li>
+        <li class="list_li"><a href="../live_param" target="mainFrame" style='color:white'>参数设置</a></li>
+{#        <li class="list_li"><a href="../medit_app" target="mainFrame" style='color:white'>数据查看</a></li>#}
+        <li class="list_li"><a href="../livetest_report" target="mainFrame" style='color:white'>测试报告</a></li>
+{#        <li class="list_li"><a href="../Data_Verify" target="mainFrame" style='color:white'>数据比对</a></li>#}
+    </ul>
+</dd>
+<dt class="list_dt">
+    <span class="_after"></span>
+    <p>现金贷</p>
+    <i class="list_dt_icon"></i>
+</dt>
+<dt class="list_dt">
+    <span class="_after"></span>
+    <p>日志功能</p>
+    <i class="list_dt_icon"></i>
+</dt>
+<dd class="list_dd">
+    <ul>
+        <li class="list_li"><a href="../log_info" target="mainFrame" style='color:white'>日志查看</a></li>
+    </ul>
+</dd>
+    <dt class="list_dt">
+    <span class="_after"></span>
+    <p>环境相关</p>
+    <i class="list_dt_icon"></i>
+</dt>
+<dd class="list_dd">
+    <ul>
+        <li class="list_li"><a href="../envtest" target="mainFrame" style='color:white'>环境地址</a></li>
+    </ul>
+</dd>
+    <dt class="list_dt">
+    <span class="_after"></span>
+    <p>数据统计</p>
+    <i class="list_dt_icon"></i>
+</dt>
+<dd class="list_dd">
+    <ul>
+        <li class="list_li"><a href="../map_app" target="mainFrame" style='color:white'>运行图</a></li>
+        <li class="list_li"><a href="../run_dataform" target="mainFrame" style='color:white'>运行表</a></li>
+    </ul>
+</dd>
+
+</dl>
+ </ul>
+</div>
+<script>
+  var navigation = responsiveNav("#nav");
+</script>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    $(".list_dt").on("click",function () {
+        $('.list_dd').stop();
+        $(this).siblings("dt").removeAttr("id");
+        if($(this).attr("id")=="open"){
+            $(this).removeAttr("id").siblings("dd").slideUp();
+        }else{
+            $(this).attr("id","open").next().slideDown().siblings("dd").slideUp();
+        }
+    });
+</script>
+    </body>
+</html>

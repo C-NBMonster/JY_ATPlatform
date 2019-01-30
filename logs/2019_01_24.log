@@ -1,0 +1,109 @@
+[2019-01-24 10:26:41,492] - logger.py] - INFO: 即有生活开始执行
+[2019-01-24 10:27:15,574] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device.
+
+[2019-01-24 10:27:49,829] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device.
+
+[2019-01-24 10:28:23,837] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device.
+
+[2019-01-24 10:28:57,913] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device.
+
+[2019-01-24 10:29:31,661] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device.
+
+[2019-01-24 10:30:05,681] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device.
+
+[2019-01-24 10:30:57,725] - logger.py] - INFO: 即有生活开始执行
+[2019-01-24 10:31:33,207] - logger.py] - INFO: 即有生活开始执行
+[2019-01-24 10:32:11,330] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device.
+
+[2019-01-24 10:32:47,536] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device.
+
+[2019-01-24 10:33:22,211] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device.
+
+[2019-01-24 10:33:56,762] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device.
+
+[2019-01-24 10:34:30,572] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device.
+
+[2019-01-24 10:35:04,198] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device.
+
+[2019-01-24 15:15:16,965] - logger.py] - INFO: 即有生活开始执行
+[2019-01-24 15:15:46,780] - logger.py] - INFO: 连接服务器成功
+[2019-01-24 15:15:46,792] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-24 15:16:17,328] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-24 15:16:53,851] - logger.py] - INFO: 连接服务器成功
+[2019-01-24 15:16:53,872] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-24 15:17:29,778] - logger.py] - INFO: 连接服务器成功
+[2019-01-24 15:17:29,793] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-24 15:52:41,701] - logger.py] - INFO: 即有生活开始执行
+[2019-01-24 15:53:06,768] - logger.py] - INFO: 连接服务器成功
+[2019-01-24 15:53:06,787] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-24 15:53:37,966] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-24 15:53:37,982] - logger.py] - INFO: 登录即有生活账号:13300000000
+[2019-01-24 15:54:08,399] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-24 15:54:08,411] - logger.py] - INFO: 'bool' object is not subscriptable
+[2019-01-24 15:54:08,424] - logger.py] - INFO: 登录即有生活账号:13300000000
+[2019-01-24 15:54:38,823] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-24 15:54:38,834] - logger.py] - INFO: 'bool' object is not subscriptable
+[2019-01-24 15:55:08,245] - logger.py] - INFO: 连接服务器成功
+[2019-01-24 15:55:08,259] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-24 15:55:39,124] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-24 15:55:39,141] - logger.py] - INFO: 登录即有生活账号:13300000000
+[2019-01-24 15:56:09,559] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-24 15:56:09,573] - logger.py] - INFO: 'bool' object is not subscriptable
+[2019-01-24 15:56:09,586] - logger.py] - INFO: 登录即有生活账号:13300000000
+[2019-01-24 15:56:39,957] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-24 15:56:39,970] - logger.py] - INFO: 'bool' object is not subscriptable
+[2019-01-24 16:31:07,011] - logger.py] - INFO: 即有生活开始执行
+[2019-01-24 16:31:27,034] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Could not sign with default certificate. Original error Command 'D\:\\software\\java\\jdk\\bin\\java.exe -jar 'C:\\Program Files (x86)\\Appium\\resources\\app\\node_modules\\appium\\node_modules\\appium-adb\\jars\\sign.jar' 'C:\\Program Files (x86)\\Appium\\resources\\app\\node_modules\\appium\\node_modules\\appium-uiautomator2-server\\apks\\appium-uiautomator2-server-v1.12.0.apk' --override' exited with code 1
+
+[2019-01-24 16:32:31,425] - logger.py] - INFO: 即有生活开始执行
+[2019-01-24 16:32:56,600] - logger.py] - INFO: 连接服务器成功
+[2019-01-24 16:32:56,617] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-24 16:33:56,151] - logger.py] - INFO: 登录即有生活账号:13300000000
+[2019-01-24 16:34:26,782] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-24 16:34:26,795] - logger.py] - INFO: 'bool' object is not subscriptable
+[2019-01-24 16:34:26,808] - logger.py] - INFO: 登录即有生活账号:13300000000
+[2019-01-24 16:34:57,310] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-24 16:34:57,326] - logger.py] - INFO: 'bool' object is not subscriptable
+[2019-01-24 16:35:23,683] - logger.py] - INFO: 连接服务器成功
+[2019-01-24 16:35:23,707] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-24 16:53:21,404] - logger.py] - INFO: 即有生活开始执行
+[2019-01-24 16:53:46,768] - logger.py] - INFO: 连接服务器成功
+[2019-01-24 16:53:46,783] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-24 16:54:47,582] - logger.py] - INFO: 登录即有生活账号:13300000000
+[2019-01-24 16:55:17,804] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-24 16:55:17,818] - logger.py] - INFO: 'bool' object is not subscriptable
+[2019-01-24 16:55:17,833] - logger.py] - INFO: 登录即有生活账号:13300000000
+[2019-01-24 16:56:50,551] - logger.py] - INFO: 即有生活开始执行
+[2019-01-24 16:57:17,040] - logger.py] - INFO: 连接服务器成功
+[2019-01-24 16:57:17,087] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-24 16:58:19,696] - logger.py] - INFO: 登录即有生活账号:13300000000
+[2019-01-24 16:58:50,047] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-24 16:58:50,060] - logger.py] - INFO: 'bool' object is not subscriptable
+[2019-01-24 16:58:50,074] - logger.py] - INFO: 登录即有生活账号:13300000000
+[2019-01-24 16:58:56,901] - logger.py] - INFO: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[2019-01-24 16:59:03,074] - logger.py] - INFO: 连接服务器失败
+[2019-01-24 16:59:03,090] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-24 16:59:04,107] - logger.py] - INFO: 登录即有生活账号:13300000000
+[2019-01-24 16:59:04,306] - logger.py] - INFO: 'bool' object has no attribute 'find_elements'
+[2019-01-24 16:59:04,320] - logger.py] - INFO: 登录即有生活账号:13300000000
+[2019-01-24 16:59:04,519] - logger.py] - INFO: 'bool' object has no attribute 'find_elements'
+[2019-01-24 16:59:08,369] - logger.py] - INFO: 连接服务器失败
+[2019-01-24 16:59:08,385] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-24 16:59:09,403] - logger.py] - INFO: 登录即有生活账号:13300000000
+[2019-01-24 16:59:09,603] - logger.py] - INFO: 'bool' object has no attribute 'find_elements'
+[2019-01-24 16:59:09,617] - logger.py] - INFO: 登录即有生活账号:13300000000
+[2019-01-24 16:59:09,828] - logger.py] - INFO: 'bool' object has no attribute 'find_elements'
+[2019-01-24 16:59:13,727] - logger.py] - INFO: 连接服务器失败
+[2019-01-24 16:59:13,740] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-24 16:59:14,755] - logger.py] - INFO: 登录即有生活账号:13300000000
+[2019-01-24 16:59:14,960] - logger.py] - INFO: 'bool' object has no attribute 'find_elements'
+[2019-01-24 16:59:14,975] - logger.py] - INFO: 登录即有生活账号:13300000000
+[2019-01-24 16:59:15,178] - logger.py] - INFO: 'bool' object has no attribute 'find_elements'
+[2019-01-24 17:05:07,979] - logger.py] - INFO: 连接服务器成功
+[2019-01-24 17:05:08,001] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-24 17:06:09,266] - logger.py] - INFO: 登录即有生活账号:13300000000
+[2019-01-24 17:06:39,810] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-24 17:06:39,824] - logger.py] - INFO: 'bool' object is not subscriptable
+[2019-01-24 17:06:39,837] - logger.py] - INFO: 登录即有生活账号:13300000000
+[2019-01-24 17:07:10,524] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-24 17:07:10,542] - logger.py] - INFO: 'bool' object is not subscriptable

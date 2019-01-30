@@ -1,0 +1,338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <title>自动化测试平台</title>
+<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+<script type="text/javascript" src="../static/js/jquery.min.js"></script>
+<script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css" />
+<script type="text/javascript" src="/admin/jsi18n/"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.js"></script>
+<script type="text/javascript" src="/static/admin/js/urlify.js"></script>
+<script type="text/javascript" src="/static/admin/js/prepopulate.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
+<script type="text/javascript" src="../static/js/verify.js"></script>
+<script type="text/javascript" src="../static/js/layer.js"></script>
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css" />
+<meta name="robots" content="NONE,NOARCHIVE" />
+{#<script src="http://www.jq22.com/jquery/1.6.4/jquery.min.js">#}
+</script><script type="text/javascript" src="../static/js/jquery.SuperSlide.2.1.1.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+<div class="container">
+<ul class="nav justify-content-left"> &nbsp;
+</ul>
+<ul class="nav justify-content-center"> &nbsp;
+</ul>
+<ul class="nav justify-content-end" style="position:absolute; right:10px; bottom:0px; ">
+<li class="nav-link"><a style='color:white' href="#">{{user}}</a></li>
+<li class="nav-link"><a style='color:white' href="/logout/">退出</a></li>
+</ul>
+</div>
+</nav>
+<style type="text/css">
+
+		*{margin:0; padding:0; list-style:none; }
+
+		body{ background:#fff; font:normal 14px/22px 微软雅黑;  }
+
+		img{ border:0;  }
+
+		a{ text-decoration:none; color:#333;  }
+
+		a:hover{ color:#1974A1;  }
+
+{#		.slideTxtBox{ width:450px; border:1px solid #ddd; text-align:left;  }#}
+
+		.slideTxtBox .hd{ height:30px; line-height:30px; background:#f4f4f4; padding:0 10px 0 20px;   border-bottom:1px solid #ddd;  position:relative; }
+
+		.slideTxtBox .hd ul{ float:left;  position:absolute; left:20px; top:-1px; height:32px;   }
+
+		.slideTxtBox .hd ul li{ float:left; padding:0 15px; cursor:pointer;  }
+
+		.slideTxtBox .hd ul li.on{ height:30px;  background:#fff; border:1px solid #ddd; border-bottom:2px solid #fff; }
+
+		.slideTxtBox .bd ul{ padding:15px;  zoom:1;  }
+
+		.slideTxtBox .bd li{ height:24px; line-height:24px;   }
+
+		.slideTxtBox .bd li .date{ float:right; color:#999;  }
+
+		/* 下面是前/后按钮代码 */
+
+		.slideTxtBox .arrow{  position:absolute; right:10px; top:0; }
+
+		.slideTxtBox .arrow a{ display:block;  width:5px; height:9px; float:right; margin-right:5px; margin-top:10px;  overflow:hidden;
+
+			 cursor:pointer; background:url("/static/img/tab.png") 0 0 no-repeat; }
+
+		.slideTxtBox .arrow .next{ background-position:0 -50px;  }
+
+		.slideTxtBox .arrow .prevStop{ background-position:-60px 0; }
+
+		.slideTxtBox .arrow .nextStop{ background-position:-60px -50px; }
+
+		</style>
+
+<div class="slideTxtBox">
+
+  <div class="hd">
+
+    <span class="arrow"><a class="next"></a><a class="prev"></a></span>
+
+    <ul>
+
+      <li>检查配置</li>
+
+      <li>检查结果</li>
+
+    </ul>
+
+  </div>
+
+  <div class="bd">
+
+    <ul>
+<div class="container-fluid" style="overflow-x:hidden;overflow-y:auto;height:950px;position:relative">
+	<div class="row-fluid">
+		<div class="span12">
+            <dd class="editReport" style="float:right;">
+              <select id="runcaseid" class="func_runid" style="width:100px;height:35px;" data-width="auto">
+                      <option value="选择运行源" {% ifequal "选择运行源" "选择运行源" %} selected='selected' {% endifequal %}>选择运行源</option>
+                  {% for mark in mark_list %}<option value="{{ mark.0}}"> {{ mark.0}} </option>  {% endfor %}
+             </select>
+                <button type="submit" class="btn btn-success" onclick='dbrun();'>运行</button>
+            </dd>
+            <input id="addcheck" class="btn-xs btn-success" type="button" value="保存" onclick="ucommitc()" />
+{#        <input type="button" class="btn-xs btn-success" value="重置" onclick="window.location.reload()" />#}
+            <input id="addBtncheck" class="btn-xs btn-success" type="button" value="新增" onclick="add_trr3(this)"/>
+			<table id="checkTable" class="table table-bordered table-striped table-hover">
+				<thead>
+					<tr>
+						<th>
+							<span>用例</span>
+						</th>
+						<th>
+							<span>用例参数</span>
+						</th>
+						<th>
+							<span>数据库</span>
+						</th>
+						<th>
+							<span>查询SQL语句</span>
+						</th>
+						<th>
+							<span>对比字段</span>
+						</th>
+						<th>
+							<span>公式</span>
+						</th>
+						<th>
+							<span>参照字段</span>
+						</th>
+						<th>
+							<span>备注</span>
+						</th>
+
+                        <th>
+							<span>操作</span>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+                 {% ifequal 0  check_list|length %}
+                 <tr>
+						<td >
+                        <select id="caseid" class="func_case" style="width:100px;height:35px;" data-width="auto" onchange="c(this)">
+                           <option value="请选择.." {% ifequal "请选择.." "请选择.." %} selected='selected' {% endifequal %}>请选择..</option>
+                           {% for case in case_list %}<option value="{{ case.0}}"> {{ case.0}} </option>  {% endfor %}
+                         </select>
+						</td>
+						<td>
+                        <input id="cnoid" class="form-control" style="width:100px;"/>
+						</td>
+						<td>
+                            <select class="func_priority_1" style="width:100px;height:35px;" data-width="auto">
+                                <option value="请选择.." {% ifequal "请选择.." "请选择.." %} selected='selected' {% endifequal %}>请选择..</option>
+                                   <option value="oracle" >oracle</option>
+                            <option value="mysql" >mysql</option>
+                             </select>
+						</td>
+						<td>
+                            <input id="sqlid"  class="form-control"  style="width:700px;" maxlength="1000"/>
+						</td>
+						<td>
+                            <input class="form-control"  style="width:100px;"/>
+
+						</td>
+						<td>
+                            <select class="func_priority_1" style="width:100px;height:35px;" data-width="auto">
+                                   <option value="=" >=</option>
+                                       <option value=">" >></option>
+                                      <option value="<" ><</option>
+                                      <option value="!=" >!=</option>
+                                      <option value="==" >==</option>
+                             </select>
+						</td>
+                        <td>
+                            <input class="form-control"  style="width:100px;"/>
+
+						</td>
+                          <td>
+                            <input class="form-control"  style="width:300px;" maxlength="30"/>
+
+						</td>
+                            <td class="cell_input" onclick="deletetr(this)">
+                                    <button type="button"  class="btn btn-xs btn-link">删除</button>
+                            </td>
+					</tr>
+                 {% else %}
+                 {% for check in check_list %}
+					<tr>
+						<td >
+                        <select id="caseid" class="func_case" style="width:100px;height:35px;" data-width="auto" onchange="c(this)">
+                           <option value="请选择.." {% ifequal "请选择.." check.0 %} selected='selected' {% endifequal %}>请选择..</option>
+                           {% for case in case_list %}<option value="{{ case.0}}" {% ifequal case.0 check.0 %} selected='selected' {% endifequal %}> {{ case.0}} </option>  {% endfor %}
+                         </select>
+						</td>
+						<td >
+                         <input id="cnoid" class="form-control"   style="width:100px;" value="{{ check.1 }}"/>
+						</td>
+						<td>
+                            <select  class="func_priority_1" style="width:100px;height:35px;" data-width="auto">
+                                <option value="请选择.." {% ifequal "请选择.." check.2 %} selected='selected' {% endifequal %}>请选择..</option>
+                            <option value="oracle" {% ifequal "oracle" check.2 %} selected='selected' {% endifequal %}>oracle</option>
+                             <option value="mysql" {% ifequal "mysql" check.2 %} selected='selected' {% endifequal %}>mysql</option>
+                             </select>
+						</td>
+						<td>
+                          <input id="sqlid"  class="form-control"  style="width:700px;" value="{{ check.3 }}" maxlength="1000"/>
+						</td>
+						<td>
+                           <input class="form-control"  style="width:100px;" value="{{ check.4 }}"/>
+						</td>
+						<td>
+                            <select  class="func_priority_1" style="width:100px;height:35px;" data-width="auto">
+                                <option value="=" {% ifequal "=" check.5 %} selected='selected' {% endifequal %}>=</option>
+                            <option value=">" {% ifequal ">" check.5 %} selected='selected' {% endifequal %}>></option>
+                            <option value="<" {% ifequal "<" check.5 %} selected='selected' {% endifequal %}><</option>
+                            <option value="!=" {% ifequal "!=" check.5 %} selected='selected' {% endifequal %}>!=</option>
+                            <option value="==" {% ifequal "==" check.5 %} selected='selected' {% endifequal %}>==</option>
+                             </select>
+						</td>
+						<td>
+                           <input class="form-control"  style="width:100px;" value="{{ check.6 }}"/>
+						</td>
+                        <td>
+                           <input class="form-control"  style="width:300px;" value="{{ check.7 }}" maxlength="30"/>
+						</td>
+                            <td class="cell_input" onclick="deletetr(this)">
+                                    <button type="button"  class="btn btn-xs btn-link">删除</button>
+                            </td>
+					</tr>
+                {% endfor %}
+                {% endifequal %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</ul>
+
+    <ul>
+<div class="container-fluid" style="overflow-x:hidden;overflow-y:auto;height:950px;position:relative">
+	<div class="row-fluid">
+		<div class="span12">
+			<table class="table table-bordered table-striped table-hover" id="checkdetail" style="text-align:center;">
+				<thead>
+                     	<tr>
+						<th colspan="10" bgcolor="#FAEBD7">
+							<span>当前运行结果</span>
+						</th>
+                        </tr>
+					<tr>
+						<th style="text-align:center;">
+							<span>模块</span>
+						</th>
+						<th style="text-align:center;">
+							<span>运行源</span>
+						</th>
+						<th style="text-align:center;">
+							<span>用例</span>
+						</th>
+						<th style="text-align:center;">
+							<span>合同号</span>
+						</th>
+						<th style="text-align:center;">
+							<span>对比值</span>
+						</th>
+						<th style="text-align:center;">
+							<span>公式</span>
+						</th>
+						<th style="text-align:center;">
+							<span>参照值</span>
+						</th>
+						<th style="text-align:center;">
+							<span>结果</span>
+						</th>
+                       <th style="text-align:center;">
+							<span>创建时间</span>
+						</th>
+
+					</tr>
+				</thead>
+				<tbody>
+                {% for rundata in check_run_list %}
+					<tr>
+						<td id="0">
+                            {{ rundata.0 }}
+						</td>
+						<td id="1">
+							{{ rundata.1 }}
+						</td>
+						<td id="2">
+							{{ rundata.2 }}
+						</td>
+						<td id="3">
+							{{ rundata.3 }}
+						</td>
+						<td id="4">
+							{{ rundata.4 }}
+						</td>
+						<td id="5">
+							{{ rundata.5 }}
+						</td>
+						<td id="6">
+							{{ rundata.6 }}
+						</td>
+						<td id="7">
+                            {% ifequal "pass" rundata.7 %}<span style="color: #1ab394; font-size: 17px; font-weight: 600">{{ rundata.7 }}</span>{% else %}<span style="color: #EE0000; font-size: 17px; font-weight: 600">{{ rundata.7 }}</span>{% endifequal %}
+                        </td>
+						<td id="8">
+							{{ rundata.8 }}
+						</td>
+					</tr>
+                {% endfor %}
+            				</tbody>
+			</table>
+		</div>
+	</div>
+	</div>
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">jQuery(".slideTxtBox").slide();</script>
+</body>
+</html>
+

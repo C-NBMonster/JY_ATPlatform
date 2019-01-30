@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据比对</title>
+</head>
+<body>
+<div class="container-fluid" style="overflow-x:hidden;overflow-y:auto;height:950px;position:relative">
+	<div class="row-fluid">
+		<div class="span12">
+			<table class="table table-bordered table-striped table-hover" id="checkdetail">
+				<thead>
+                     	<tr>
+						<th colspan="10" bgcolor="#FAEBD7">
+							<span>当前运行结果</span>
+						</th>
+                        </tr>
+					<tr>
+						<th style="text-align:center;">
+							<span>模块</span>
+						</th>
+						<th style="text-align:center;">
+							<span>运行源</span>
+						</th>
+						<th style="text-align:center;">
+							<span>用例</span>
+						</th>
+						<th style="text-align:center;">
+							<span>合同号</span>
+						</th>
+						<th style="text-align:center;">
+							<span>对比值</span>
+						</th>
+						<th style="text-align:center;">
+							<span>参照值</span>
+						</th>
+                       <th style="text-align:center;">
+							<span>运行时间</span>
+						</th>
+						<th style="text-align:center;">
+							<span>结果</span>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+                {% for rundata in rundata_list %}
+					<tr>
+						<td>
+                            {{ rundata.0 }}
+						</td>
+						<td>
+							{{ rundata.1 }}
+						</td>
+						<td>
+							{{ rundata.2 }}
+						</td>
+						<td>
+							{{ rundata.3 }}
+						</td>
+						<td>
+							{{ rundata.4 }}
+						</td>
+						<td>
+							{{ rundata.5 }}
+						</td>
+						<td>
+							{{ rundata.6 }}
+						</td>
+                        <td>
+							{{ rundata.7 }}
+						</td>
+					</tr>
+                {% endfor %}
+            				</tbody>
+			</table>
+		</div>
+	</div>
+	</div>
+</body>
+</html>

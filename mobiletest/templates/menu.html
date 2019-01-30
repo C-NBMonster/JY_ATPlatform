@@ -1,0 +1,277 @@
+<!-- 作者：吴俊威  日期：2018年8月 -->
+<html lang="en">
+<head>
+{#    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>#}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <title>参数数据</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css" />
+<script type="text/javascript" src="/admin/jsi18n/"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.js"></script>
+<script type="text/javascript" src="/static/admin/js/urlify.js"></script>
+<script type="text/javascript" src="/static/admin/js/prepopulate.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css" />
+<meta name="robots" content="NONE,NOARCHIVE" />
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+<div class="container">
+<ul class="nav justify-content-left"> &nbsp;
+</ul>
+<ul class="nav justify-content-center"> &nbsp;
+</ul>
+<ul class="nav justify-content-end" style="position:absolute; right:10px; bottom:0px; ">
+<li class="nav-link"><a style='color:white' href="#">{{user}}</a></li>
+<li class="nav-link"><a style='color:white' href="/logout/">退出</a></li>
+{#<li class="nav-link"><a style='color:white' href="/login/">退出</a></li>#}
+</ul>
+</div>
+</nav>
+   <form  method="get" action="/cnosearch/">
+
+            <dd class="editReport">
+                <label class="artificialDateLabel" >开始日期：</label>
+               <input type="text" name="datea" value="{{artificialDate}}" class="datepicker" placeholder="请选择日期" />
+                <label class="artificialDateLabel" >结束日期：</label>
+               <input type="text" name="dateb" value="{{artificialDate}}" class="datepicker" placeholder="请选择日期" />
+
+                <button type="submit" class="btn btn-success">查询</button>
+            </dd>
+   </form>
+<div class="col-sm-12 text-center">
+</div>
+<div class="container-fluid" style="overflow-x:hidden;overflow-y:auto;height:950px;position:relative">
+	<div class="row-fluid">
+		<div class="span12">
+			<table class="table table-bordered table-striped table-hover">
+				<thead>
+					<tr>
+						<th>
+							<span>编号</span>
+						</th>
+						<th>
+							<span>合同号</span>
+						</th>
+						<th>
+							<span>合同名称</span>
+						</th>
+						<th>
+							<span>身份证</span>
+						</th>
+						<th>
+							<span>电话号码</span>
+						</th>
+						<th>
+							<span>资金方</span>
+						</th>
+						<th>
+							<span>合同状态</span>
+						</th>
+                        <th>
+							<span>运行人</span>
+						</th>
+						<th>
+							<span>创建时间</span>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+                {% for cn in cno_list %}
+{#                     {% for cn in cno %}#}
+					<tr>
+
+						<td>
+                            {{ cn.0 }}
+						</td>
+						<td>
+							{{ cn.1 }}
+						</td>
+						<td>
+							{{ cn.2 }}
+						</td>
+						<td>
+							{{ cn.3 }}
+						</td>
+						<td>
+							{{ cn.4 }}
+						</td>
+						<td>
+							{{ cn.6 }}
+						</td>
+						<td>
+							{{ cn.7 }}
+						</td>
+                        <td>
+							{{ cn.8 }}
+						</td>
+						<td>
+							{{ cn.5 }}
+						</td>
+
+					</tr>
+{#                 {% endfor %}#}
+                {% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+	</div>
+<!--统计和翻页功能-->
+<span style="position:absolute; left:600px; bottom:30px;">   {# 把翻页功能固定显示在右下角#}
+<div style="position:absolute; right:950px; bottom:25px; width:100px;">
+共:{{ cno_count }}条记录 {# 前端读取定义的变量#}
+</div>
+<div class="container" >
+
+    <ul class="pagination" id="pager">
+          {# 上一页链接开始#}
+        {% if cno_list.has_previous %}
+            {#  如果有上一页则正常显示上一页链接#}
+            <li class="previous"><a href="/medit_app/?page={{ cno_list.previous_page_number }}">上一页</a></li>    {#  上一页标签 #}
+        {% else %}
+            <li class="previous disabled"><a href="#">上一页</a></li> {# 如果当前不存在上一页则上一页的链接不可点击#}
+        {% endif %}
+        {# 上一页链接开始#}
+
+        {% for num in cno_list.paginator.page_range %}
+
+            {% if num == currentPage %}
+                <li class="item active"><a href="/medit_app/?page={{ num }}">{{ num }}</a></li> {#显示当页数链接#}
+            {% else %}
+                <li class="item " ><a href="/medit_app/?page={{ num }}">{{ num }}</a></li>
+            {% endif %}
+        {% endfor %}
+
+        {# 下一页链接开始#}
+        {% if cno_list.has_next %} {#  如果有下一页则正常显示下一页链接#}
+            <li class="next"><a href="/medit_app/?page={{ cno_list.next_page_number }}">下一页</a></li>
+        {% else %}
+            <li class="next disabled"><a href="#">下一页</a></li>
+        {% endif %}
+        {# 下一页链接结束#}
+    </ul>
+
+</div></span>
+
+</body>
+<script type="text/javascript">
+ function menuedit1(){
+    var editval = $(".testval").val();
+     $.ajax({
+         type:'POST',
+         url:"/medit_app/",
+         data:{dat:editval},
+         success:function(arg){
+             var obj = jQuery.parseJSON(arg);
+             console.log(obj.status);
+             console.log(obj.msg);
+             console.log(obj.data);
+             console.log('success');
+             $('#testval').val(obj.msg);
+        },
+         error:function(){
+            console.log('failed')
+        }
+    });
+}
+ function menuedit(){
+		$.ajax({
+			type:"post",
+			url:"/medit_app/",
+			data:{eid:eventid, phone:phone},
+			dataType:"json",
+			cache:false,
+			success:function(json){
+				if(json['status'] == 10025){
+					wrongStatus('不存在');
+
+{#				}else if(json['status'] == 10026){#}
+{#					wrongStatus('没有参加此次发布会');#}
+
+{#				}else if(json['status'] == 10027){#}
+{#					wrongStatus('已签到');#}
+{#					#}
+{#				}else if(json['status'] == 10024){#}
+{#					wrongStatus('已开始');#}
+{#					refresh(2000);#}
+{#				}else if(json['status'] == 10023){#}
+{#					wrongStatus('未开启');#}
+{#					refresh(2000);#}
+{#				}else if(json['status'] == 200){#}
+{#					$("#realname").text(json['realname']);#}
+{#					$("#realname").css("background","none");#}
+{#					$("#tips").text(json['phone']);#}
+{#					$("#tips").css("background","none");#}
+{#					$("#cent_box_isn").show();//背景#}
+{#					$("#cent_box").hide();//隐藏输入框#}
+{#					$("#text").hide();//隐藏标题#}
+{#					$("#name").val('');#}
+{#					$("#text_box_2").show();#}
+{#					$(".cry").hide();   //错误提示#}
+{#					$(".smile").show();#}
+{#					isEnter = false;#}
+{#					refresh(3000);#}
+{#					return false;#}
+{#				}else{#}
+{#					window.alert(json['status']);#}
+{#					$("#cent_box_isn").show();//背景#}
+{#					$("#text_box_2").show();//错误提示#}
+{#					$("#cent_box").hide();//隐藏输入框#}
+{#					$("#text").hide();//隐藏标题#}
+{#					$(".smile").hide();#}
+{#					$("#tips").css({#}
+{#						background: 'none',#}
+{#						color: '#333'#}
+{#					}).text('验证失败');#}
+{#					refresh(2000);#}
+				}
+				isEnter = false;
+			},
+			error:function() {
+				isEnter = false;
+				alert("你可能登录失效了或者断网了，请刷新当前页面。");
+			}
+		});
+}
+    function wrongStatus(str){
+	$("#cent_box_isn").show();
+	$('#text_box_2').show();
+	$(".cry").show();   //错误提示
+	$(".smile").hide();
+	$('#tips').text(str).css({
+		color: '#333',
+		background: 'none'
+	});
+	isStatusNormal = false;
+	refresh(2000);
+	return false;
+}
+
+</script>
+    <script>
+    $(function () {
+        $(".datepicker").datepicker({
+            language: "zh-CN",
+            autoclose: true,//选中之后自动隐藏日期选择框
+            clearBtn: true,//清除按钮
+            todayHighlight: true,
+            format: "yyyy-mm-dd"//日期格式
+        });
+    });
+</script>
+    <link rel="stylesheet" href="/static/css/bootstrap-datepicker.css" type="text/css" />
+    <script type="text/javascript" src="/static/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap-datepicker.zh-CN.min.js"></script>
+</html>

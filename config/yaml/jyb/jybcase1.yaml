@@ -1,0 +1,931 @@
+#------------------------------------
+#作者：吴俊威  日期：2018年10月
+#内容：0-83
+#-----------------------------------
+#订单阶段一:
+# 0
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("开始体验")
+  optype: click
+  index:
+  text:
+# 1
+-
+  byType: id
+  cval: com.giveu.corder:id/et_account
+  optype: send_keys
+  index:
+  text:
+# 2
+-
+  byType: id
+  cval: com.giveu.corder:id/et_pwd
+  optype: send_keys
+  index:
+  text: 123456
+# 3
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_login
+  optype: click
+  index:
+  text:
+# 4  提示
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_ok
+  optype: click
+  index:
+  text:
+# 5  弹出提示 id	com.giveu.corder:id/tv_not_set
+#-
+#  byType: -android uiautomator
+#  cval: new UiSelector().text("暂不")
+#  optype: click
+#  index:
+#  text:
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_not_set
+  optype: click
+  index:
+  text:
+# 6
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_right
+  optype: click
+  index:
+  text:
+# 7
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_choose_right
+  optype: click
+  index: 0
+  text:
+# 8
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_choose_right
+  optype: click
+  index: 1
+  text:
+# 9
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_choose_right
+  optype: click
+  index: 2
+  text:
+# 10
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_choose_right
+  optype: click
+  index: 3
+  text:
+# 11
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("常规")
+  optype: click
+  index:
+  text:
+# 12
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请输入商品金额")
+  optype: send_keys
+  index:
+  text:
+# 13
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请输入首付金额")
+  optype: send_keys
+  index:
+  text:
+# 14
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_newbuild_next
+  optype: click
+  index:
+  text:
+# 15
+-
+  byType: id
+  cval: com.giveu.corder:id/switch_insurance
+  optype: click
+  index:
+  text:
+# 16
+-
+  byType: id
+  cval: com.giveu.corder:id/switch_treasure
+  optype: click
+  index:
+  text:
+# 17
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_installment_next
+  optype: click
+  index:
+  text:
+# 18
+-
+  byType: id
+  cval: com.giveu.corder:id/ll_item
+  optype:
+  index:
+  text:
+# 19
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_choose_right
+  optype:
+  index:
+  text:
+# 20
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请输入商品型号")
+  optype: send_keys
+  index:
+  text: 测试类型
+# 21
+-
+  byType: id
+  cval: com.giveu.corder:id/cb_insurance
+  optype: click
+  index:
+  text:
+# 22
+-
+  byType: id
+  cval: com.giveu.corder:id/cb_broken
+  optype: click
+  index:
+  text:
+# 23
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_next
+  optype: click
+  index:
+  text:
+# 24
+-
+  byType: id
+  cval: com.giveu.corder:id/iv_loading_front
+  optype: click
+  index:
+  text:
+# 25
+-
+  byType: id
+  cval: com.giveu.corder:id/imbtn_takepic
+  optype: click
+  index:
+  text:
+# 26
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_name_front
+  optype: send_keys
+  index:
+  text:
+# 27  511000198506020031  150621198109199273
+-
+  byType: id
+  cval: com.giveu.corder:id/et_idcard_front
+  optype: send_keys
+  index:
+  text: 511000198506020031
+# 28   com.giveu.corder:id/iv_right  2  com.giveu.corder:id/tv_choose_address
+-
+#  byType: id
+#  cval: com.giveu.corder:id/iv_right
+#  optype: click
+#  index: 0
+#  text:
+  byType: -android uiautomator
+  cval: new UiSelector().text("请选择...")
+  optype: click
+  index:
+  text:
+# 29
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("四川")
+  optype: click
+  index:
+  text:
+# 30
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("内江")
+  optype: click
+  index:
+  text:
+# 31
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("市中区")
+  optype: click
+  index:
+  text:
+# 32
+-
+  byType: id
+  cval: com.giveu.corder:id/et_address_front
+  optype: send_keys
+  index:
+  text: 四川内江市中区
+# 33
+-
+  byType: id
+  cval: com.giveu.corder:id/iv_loading_back
+  optype: click
+  index:
+  text:
+# 34
+-
+  byType: id
+  cval: com.giveu.corder:id/imbtn_takepic
+  optype: click
+  index:
+  text:
+# 35
+-
+  byType: id
+  cval: com.giveu.corder:id/et_office_back
+  optype: send_keys
+  index:
+  text: 四川内江市中区
+# 36
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_date_start
+  optype: click
+  index:
+  text:
+# 37
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("确定")
+  optype: click
+  index:
+  text:
+# 38
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_date_end
+  optype: click
+  index:
+  text:
+# 39
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("确定")
+  optype: click
+  index:
+  text:
+# 40
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请输入客户常用手机号")
+  optype: send_keys
+  index:
+  text: 15400000000
+# 41
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_order
+  optype: click
+  index:
+  text:
+#以上为阶段一生成订单-------------------------------------------------
+#阶段二：
+# 42  上传门店照   	com.giveu.corder:id/ll_take_photo
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请上传与客户及门店合照")
+  optype: click
+  index:
+  text:
+#-
+#  byType: id
+#  cval: com.giveu.corder:id/ll_take_photo
+#  optype: click
+#  index:
+#  text:
+# 43 拍照     id: com.android.camera:id/v6_shutter_button_internal
+-
+  byType: xpath
+  cval: //android.widget.ImageView[@content-desc="拍摄"]
+  optype: click
+  index:
+  text:
+# 44 拍照确认  //*[@class='android.widget.ImageView' and @index='2']
+-
+  byType: xpath
+  cval: //android.widget.ImageView[@resource-id="com.android.camera:id/v6_btn_done"]
+  optype: click
+  index:
+  text:
+# 45 上传门店照完成
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_next
+  optype: click
+  index:
+  text:
+# 46  获取授权码
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("获取授权码")
+  optype: click
+  index:
+  text:
+# 47 输入验证码
+-
+  byType: id
+  cval: com.giveu.corder:id/et_identifying_code
+  optype: send_keys
+  index:
+  text:
+# 48 征信授权页完成
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_authorize
+  optype: click
+  index:
+  text:
+# 49  PDF页
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("提交预审")
+  optype: click
+  index:
+  text:
+# 50 其他信息页 请选择
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_innerCode
+  optype: click
+  index:
+  text:
+# 51  选代码1
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("1")
+  optype: click
+  index:
+  text:
+# 52  填销售备注
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请输入0到200个字的销售备注")
+  optype: send_keys
+  index:
+  text: 销售备注
+# 53 其他信息页完成
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("下一步")
+  optype: click
+  index:
+  text:
+# 54 请选择：居住市县
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请选择...")
+  optype: click
+  index:
+  text:
+# 55 省   	com.giveu.corder:id/tv_address
+#-
+#  byType: -android uiautomator
+#  cval: new UiSelector().text("湖北")
+#  optype: click
+#  index:
+#  text:
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_address
+  optype: click
+  index: 0
+  text:
+# 56 市  	com.giveu.corder:id/tv_address
+#-
+#  byType: -android uiautomator
+#  cval: new UiSelector().text("武汉")
+#  optype: click
+#  index:
+#  text:
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_address
+  optype: click
+  index: 0
+  text:
+# 57 区   	com.giveu.corder:id/tv_address
+#-
+#  byType: -android uiautomator
+#  cval: new UiSelector().text("武昌区")
+#  optype: click
+#  index:
+#  text:
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_address
+  optype: click
+  index: 0
+  text:
+# 58 请选择：教育程度
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请选择...")
+  optype: click
+  index:
+  text:
+# 59  学历
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("小学")
+  optype: click
+  index:
+  text:
+# 60 请选择：婚姻状况
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请选择...")
+  optype: click
+  index:
+  text:
+# 61  婚姻状况
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("未婚")
+  optype: click
+  index:
+  text:
+# 62  请输入区/镇后详细地址
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请输入区/镇后详细地址")
+  optype: send_keys
+  index:
+  text: 湖北友谊路
+# 63   请输入个人月收入总额
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请输入个人月收入总额")
+  optype: send_keys
+  index:
+  text: 5000
+# 64   请输入个人月支出
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请输入个人月支出")
+  optype: send_keys
+  index:
+  text: 4000
+# 65  请输入家庭月收入总额
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请输入家庭月收入总额")
+  optype: send_keys
+  index:
+  text: 5000
+# 66  请输入QQ号码
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请输入QQ号码")
+  optype: send_keys
+  index:
+  text: 123456
+# 67 基本信息页完成
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("下一步")
+  optype: click
+  index:
+  text:
+# 68 同步现居住地址
+-
+  byType: id
+  cval: com.giveu.corder:id/toggleSwitch
+  optype: click
+  index:
+  text:
+# 69 单位名称
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请输入单位名称")
+  optype: send_keys
+  index:
+  text: 测试单位
+# 70 单位电话
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请输入单位电话/手机")
+  optype: send_keys
+  index:
+  text: 13300000001
+
+# 71 请选择：行业类别
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请选择...")
+  optype: click
+  index:
+  text:
+# 72 行业类别   	android:id/text1
+#-
+#  byType: -android uiautomator
+#  cval: new UiSelector().text("军队")
+#  optype: click
+#  index:
+#  text:
+-
+  byType: id
+  cval: android:id/text1
+  optype: click
+  index: 0
+  text:
+# 73 请选择：单位性质
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请选择...")
+  optype: click
+  index:
+  text:
+# 74 单位性质   	android:id/text1
+#-
+#  byType: -android uiautomator
+#  cval: new UiSelector().text("国有")
+#  optype: click
+#  index:
+#  text:
+-
+  byType: id
+  cval: android:id/text1
+  optype: click
+  index: 0
+  text:
+# 75 请选择：职位
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请选择...")
+  optype: click
+  index:
+  text:
+# 76 职位
+#-
+#  byType: -android uiautomator
+#  cval: new UiSelector().text("军人")
+#  optype: click
+#  index:
+#  text:
+-
+  byType: id
+  cval: android:id/text1
+  optype: click
+  index: 0
+  text:
+# 77 请选择：入职时间
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请选择...")
+  optype: click
+  index:
+  text:
+# 78 入职时间
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("确定")
+  optype: click
+  index:
+  text:
+# 79 请选择：工作年限
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请选择...")
+  optype: click
+  index:
+  text:
+# 80 工作年限
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("1年")
+  optype: click
+  index:
+  text:
+# 81 单位信息页完成
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("下一步")
+  optype: click
+  index:
+  text:
+# 82 拍照 (模拟器）    id: com.android.camera:id/v6_shutter_button_internal
+-
+  byType: xpath
+  cval: //android.widget.ImageView[@content-desc="“快门”按钮"]
+  optype: click
+  index:
+  text:
+# 83 拍照确认(模拟器）  //*[@class='android.widget.ImageView' and @index='2']
+-
+  byType: xpath
+  cval: //android.widget.ImageView[@resource-id="com.android.camera:id/btn_done"]
+  optype: click
+  index:
+  text:
+# 84
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请输入套餐信息")
+  optype: send_keys
+  index:
+  text: 电信100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

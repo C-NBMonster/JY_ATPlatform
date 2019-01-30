@@ -1,0 +1,124 @@
+<!-- 作者：吴俊威  日期：2019年1月 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid" style="overflow-x:auto;width:auto;height:auto;position:relative">
+	<div class="row-fluid">
+		<div class="span12">
+{#            <div style="float:right;">#}
+            <input id="addBtn2" class="btn-xs btn-success" type="button" value="保存" onclick="commitval('lTable','live_param_save')" >
+            <input id="addBtn" class="btn-xs btn-success" type="button" value="新增" onclick="add_trr2(this)"/>
+			<table id="lTable" class="table table-bordered table-striped table-hover">
+				<thead>
+					<tr>
+						<th>
+							<span>电话号码</span>
+						</th>
+						<th>
+							<span>密码</span>
+						</th>
+						<th>
+							<span>姓名</span>
+						</th>
+						<th>
+							<span>登录类型</span>
+						</th>
+						<th>
+							<span>银行</span>
+						</th>
+						<th>
+							<span>银行卡</span>
+						</th>
+						<th>
+							<span>支付密码</span>
+						</th>
+                        <th>
+							<span>操作</span>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+                 {% ifequal 0  lparam_list|length %}
+                 <tr>
+						<td >
+                         <input  class="form-control" style="width:150px;" />
+						</td>
+						<td>
+                        <input  class="form-control" style="width:100px;"/>
+						</td>
+						<td>
+                          <input class="form-control"  style="width:100px;"/>
+						</td>
+						<td>
+                            <select class="func_priority_1" style="width:100px;height:35px;" data-width="auto">
+                                   <option value="验证码" >验证码</option>
+                                       <option value="密码" >密码</option>
+                             </select>
+
+						</td>
+						<td>
+                            <input class="form-control"  style="width:120px;"/>
+
+						</td>
+                        <td>
+                            <input class="form-control"  style="width:250px;"/>
+
+						</td>
+                          <td>
+                            <input class="form-control"  style="width:100px;"/>
+
+						</td>
+
+                            <td class="cell_input" onclick="deletetr(this)">
+                                    <button type="button"  class="btn btn-xs btn-link" style="float:left;">删除</button>
+                            </td>
+					</tr>
+                 {% else %}
+                 {% for paramc in lparam_list %}
+					<tr>
+                    <td >
+                         <input class="form-control" style="width:150px;" value="{{ paramc.0 }}"/>
+						</td>
+						<td >
+                         <input class="form-control"   style="width:100px;" value="{{ paramc.1 }}"/>
+						</td>
+						<td>
+                        <input class="form-control"  style="width:100px;" value="{{ paramc.2 }}"/>
+						</td>
+						<td>
+                            <select  class="form-control" style="width:100px;height:35px;" data-width="auto">
+                                <option value="验证码" {% ifequal "验证码" paramc.3 %} selected='selected' {% endifequal %}>验证码</option>
+                            <option value="密码" {% ifequal "密码" paramc.3 %} selected='selected' {% endifequal %}>密码</option>
+                             </select>
+
+						</td>
+						<td>
+                           <input class="form-control"  style="width:120px;" value="{{ paramc.4 }}"/>
+						</td>
+						<td>
+                           <input class="form-control"  style="width:250px;" value="{{ paramc.5 }}"/>
+						</td>
+                        <td>
+                           <input class="form-control"  style="width:100px;" value="{{ paramc.6 }}"/>
+						</td>
+                            <td class="cell_input" onclick="deletetr(this)">
+                                    <button type="button"  class="btn btn-xs btn-link" style="float:left;">删除</button>
+                            </td>
+					</tr>
+                {% endfor %}
+                {% endifequal %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+</body>
+    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/lscripts.js"></script>
+    <script type="text/javascript" src="../static/js/layer.js"></script>
+</html>

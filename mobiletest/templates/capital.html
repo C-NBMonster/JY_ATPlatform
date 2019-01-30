@@ -1,0 +1,60 @@
+<!-- 作者：吴俊威  日期：2018年11月 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{#<body onload="window.location.href='../cap_app'">#}
+<body>
+{#<div id="signup">#}
+<div id="signup-ct">
+<div id="signup-header">
+    <h2>轮循资金</h2>
+    <a class="modal_close" href="#"></a>
+</div>
+{#<form action="">#}
+  <div class="txt-fld">
+<table class="table table-bordered table-striped table-hover" id="zjf">
+                <thead>
+                    <tr>
+                        <th>
+                            资金方
+                        </th>
+                        <th>
+                            金额
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for cap_l in cap_list %}
+                    <tr>
+                        <td><input style="width:150px;" value={{ cap_l.0 }}></td>
+                        <td><input style="width:150px;" value={{ cap_l.1 }}></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+  </div>
+  <div class="btn-fld">
+  <button type="submit" onclick="commitba()">确定</button>
+</div>
+{#</form>#}
+</div>
+{#</div>#}
+</body>
+</noframes>
+<script type="text/javascript" src="../static/js/jquery.min.js"></script>
+<script type="text/javascript" src="../static/js/scripts.js"></script>
+<script type="text/javascript" src="../static/js/jquery.leanModal.min.js"></script>
+<script src="http://www.jq22.com/js/jq.js"></script>
+<script type="text/javascript">
+
+    $(function() {
+
+        $('a[rel*=leanModal]').leanModal({ top : 200, closeButton: ".modal_close" });
+
+    });
+
+</script>
+</html>

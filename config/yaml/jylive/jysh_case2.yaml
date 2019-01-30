@@ -1,0 +1,271 @@
+#------------------------------------
+#作者：陈镜旭  日期：2019年1月8日
+#-----------------------------------
+# start 主页 -----------------------------------------------------------------------------------------------------------
+#0 first page search input
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_top_search
+  optype: click
+  index:
+  text:
+
+#1 search page
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/fragment_center_edit
+  optype: send_keys
+  index:
+  text:
+
+#2 search button
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/fragment_right_text
+  optype: click
+  index:
+  text:
+
+#3 back to first page
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/fragment_left_image
+  optype: click
+  index:
+  text:
+
+#4 hot search label 热门标签父元素
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/shopping_search_flowlayout
+  optype: click
+  index:
+  text:
+
+#search result page-----------------------
+#5  goods's pic
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/item_left_image
+  optype: el
+  index: 0
+  text:
+
+#6  goods's name
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/item_right_name
+  optype: el
+  index: 0
+  text:
+
+#7  goods's description
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/item_right_desc
+  optype: el
+  index: 0
+  text:
+
+#8  goods's sale price
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/item_right_price
+  optype: el
+  index: 0
+  text:
+
+#9  goods's month mount
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/item_right_month_mount
+  optype: el
+  index: 0
+  text:
+
+
+#10  goods's listview
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/shopping_list_listview
+  optype: el
+  index:
+  text:
+
+# End 搜索页 -----------------------------------------------------------------------------------------------------------
+
+
+#start goods detail page-------------------------------------------
+#11  buy button
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_buy
+  optype: el
+  index:
+  text:
+
+#12 送货地址
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_middle
+  optype: el
+  index: 1
+  text:
+
+#13 更改地址跳转链接
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_right
+  optype: el
+  index: 3
+  text:
+
+# 14
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("广东")
+  optype: el
+  index:
+  text:
+# 15
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("深圳")
+  optype: el
+  index:
+  text:
+# 16
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("福田区")
+  optype: el
+  index:
+  text:
+# 17 关闭SKU选择弹窗
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/iv_dismiss
+  optype: click
+  index:
+  text:
+# 18 sku
+  byType: -android uiautomator
+  cval: new UiSelector().text("摩卡金")
+  optype: el
+  index:
+  text:
+# 19 购买数量
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_amounts
+  optype: el
+  index:
+
+# 20 数量增加1
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/iv_plus
+  optype: click
+  index:
+
+# 21 数量减去1
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/iv_reduce
+  optype: click
+  index:
+
+# 22
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("下一步")
+  optype: click
+  index:
+  text:
+
+  ######选择首付与分期页---------------------------------------------
+ # 23   首付
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("零首付")
+  optype: click
+  index:
+  text: 零首付
+
+ # 24  分期
+  byType: -android uiautomator
+  cval: new UiSelector().text("6期")
+  optype: click
+  index:
+  text: 6期
+
+# 25 首付金额
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_down_payment
+  optype: el
+  index:
+
+# 26 商品合计
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_total_price
+  optype: el
+  index:
+
+# 27 月供
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_month_supply
+  optype: el
+  index:
+
+# 28 单价
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_price
+  optype: el
+  index:
+
+# 29 支付金额
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/confirm_order_total_price
+  optype: el
+  index:
+
+# 30 订单信息确认
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/dialog_confirm
+  optype: click
+  index:
+
+# 31 提交订单
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_ok
+  optype: click
+  index:
+
+# 32 输入支付密码
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/inputview_dialog
+  optype: el
+  index:
+
+# 33 输入短信验证码
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/input_view_pwd
+  optype: el
+  index:
+
+# 34 输入短信验证码
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/input_view_pwd
+  optype: el
+  index:
+#End goods detail page-------------------------------------------

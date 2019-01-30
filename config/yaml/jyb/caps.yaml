@@ -1,0 +1,73 @@
+#------------------------------------
+#作者：吴俊威  日期：2018年10月  MIUI8.0
+#-----------------------------------
+android真机：小米6.0.1MX:
+-
+  platformName: Android
+  platformVersion: 6.0.1
+  deviceName: b62f7ec6
+  appPackage: com.giveu.corder
+  appActivity: com.giveu.corder.index.activity.SplashActivity
+  unicodeKeyboard: true
+  resetKeyboard: true
+
+android模拟器:
+-
+  platformName: Android
+  platformVersion: 5.1.1
+  deviceName: 127.0.0.1:21503
+  appPackage: com.giveu.corder
+  appActivity: com.giveu.corder.index.activity.SplashActivity
+  unicodeKeyboard: true
+  resetKeyboard: true
+
+android真机：华为P10:
+-
+  platformName: Android
+  platformVersion: 8.0.0
+  deviceName: Y2J5T17608000945
+  appPackage: com.giveu.corder
+  appActivity: com.giveu.corder.index.activity.SplashActivity
+  unicodeKeyboard: true
+  resetKeyboard: true
+
+android真机：MEIZU PRO6:
+-
+  platformName: Android
+  platformVersion: 7.0.0
+  deviceName: M960BDPT227HH
+  appPackage: com.giveu.corder
+  appActivity: com.giveu.corder.index.activity.SplashActivity
+  unicodeKeyboard: true
+  resetKeyboard: true
+
+android真机：小米8.0.0:
+-
+#  automationName: Uiautomator2
+  platformName: Android
+  platformVersion: 8.0.0
+  deviceName: 29739ff4
+  appPackage: com.giveu.corder
+  appActivity: com.giveu.corder.index.activity.SplashActivity
+  unicodeKeyboard: true
+  resetKeyboard: true
+
+android真机：小米8.0.0MI6:
+-
+  platformName: Android
+  platformVersion: 8.0.0
+  deviceName: fc323ca3
+  appPackage: com.giveu.corder
+  appActivity: com.giveu.corder.index.activity.SplashActivity
+  unicodeKeyboard: true
+  resetKeyboard: true
+
+android真机：Honor Note10:
+-
+  platformName: Android
+  platformVersion: 8.1.0
+  deviceName: JUBNU18930139806
+  appPackage: com.giveu.corder
+  appActivity: com.giveu.corder.index.activity.SplashActivity
+  unicodeKeyboard: true
+  resetKeyboard: true

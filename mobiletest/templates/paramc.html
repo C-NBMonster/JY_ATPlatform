@@ -1,0 +1,221 @@
+<!-- 作者：吴俊威  日期：2018年8月 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid" style="overflow-x:auto;width:auto;height:auto;position:relative">
+	<div class="row-fluid">
+		<div class="span12">
+{#            <div style="float:right;">#}
+            <input id="addBtn2" class="btn-xs btn-success" type="button" value="保存" onclick="commitb()" >
+            <input id="addBtn" class="btn-xs btn-success" type="button" value="新增" onclick="add_trr2(this)"/>
+			<table id="funcTable" class="table table-bordered table-striped table-hover">
+				<thead>
+					<tr>
+						<th>
+							<span>门店ID</span>
+						</th>
+						<th>
+							<span>商品类型</span>
+						</th>
+						<th>
+							<span>产品版本</span>
+						</th>
+						<th>
+							<span>商品总额</span>
+						</th>
+						<th>
+							<span>首付总额</span>
+						</th>
+						<th>
+							<span>保险一</span>
+						</th>
+						<th>
+							<span>贷款期数</span>
+						</th>
+						<th>
+							<span>商品小类</span>
+						</th>
+						<th>
+							<span>商品品牌</span>
+						</th>
+						<th>
+							<span>保险二</span>
+						</th>
+                        <th>
+							<span>资金方</span>
+						</th>
+                        <th>
+							<span>合同状态</span>
+						</th>
+                        <th>
+							<span>操作</span>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+                 {% ifequal 0  param_list|length %}
+                 <tr>
+						<td >
+                         <input  class="form-control" style="width:120px;" />
+						</td>
+						<td>
+                        <input  class="form-control" style="width:100px;"/>
+						</td>
+						<td>
+                          <input class="form-control"  style="width:100px;"/>
+						</td>
+						<td>
+                            <input class="form-control"  style="width:100px;"/>
+
+						</td>
+						<td>
+                            <input class="form-control"  style="width:100px;"/>
+
+						</td>
+						<td>
+                            <select class="func_priority_1" style="width:100px;height:35px;" data-width="auto">
+                                   <option value="全部" >全部</option>
+                                       <option value="保险" >保险</option>
+                                      <option value="百宝箱" >百宝箱</option>
+                                      <option value="不参加" >不参加</option>
+                             </select>
+
+						</td>
+                        <td>
+                            <input class="form-control"  style="width:100px;"/>
+
+						</td>
+                          <td>
+                            <input class="form-control"  style="width:100px;"/>
+
+						</td>
+                         <td>
+                            <input class="form-control"  style="width:100px;"/>
+
+						</td>
+                      <td>
+                                 <select class="form-control" style="width:120px;height:35px;" data-width="auto">
+                                      <option value="不参加" >不参加</option>
+                                       <option value="全面保" >全面保</option>
+                                      <option value="碎碎平安" >碎碎平安</option>
+
+                             </select>
+
+						</td>
+                      <td>
+                                 <select class="form-control" style="width:150px;height:35px;" data-width="auto">
+                                      <option value="轮循" >轮循</option>
+                                      <option value="P2P_PPM" >P2P_PPM</option>
+                                      <option value="P2P_YNXT" >P2P_YNXT</option>
+                                     <option value="P2P_HBXD" >P2P_HBXD</option>
+                                     <option value="P2P_JDLC" >P2P_JDLC</option>
+                                     <option value="XT_JH" >XT_JH</option>
+                                     <option value="P2P_WCW" >P2P_WCW</option>
+                                     <option value="P2P_TBJ" >P2P_TBJ</option>
+                                     <option value="P2P_DR" >P2P_DR</option>
+                                     <option value="P2P_WCW_KD" >P2P_WCW_KD</option>
+                                     <option value="XD_LDJK" >XD_LDJK</option>
+                             </select>
+
+						</td>
+                      <td>
+                                 <select class="form-control"  style="width:70px;height:35px;" data-width="auto">
+                                      <option value="s" >s</option>
+                                       <option value="pr" >pr</option>
+                                      <option value="r" >r</option>
+                                     <option value="y" >y</option>
+                                     <option value="a" >a</option>
+                             </select>
+						</td>
+                            <td class="cell_input" onclick="deletetr(this)">
+                                    <button type="button"  class="btn btn-xs btn-link">删除</button>
+                            </td>
+					</tr>
+                 {% else %}
+                 {% for paramc in param_list %}
+					<tr>
+                    <td >
+                         <input class="form-control" style="width:120px;" value="{{ paramc.0 }}"/>
+						</td>
+						<td >
+                         <input class="form-control"   style="width:100px;" value="{{ paramc.1 }}"/>
+						</td>
+						<td>
+                        <input class="form-control"  style="width:100px;" value="{{ paramc.2 }}"/>
+						</td>
+						<td>
+                          <input class="form-control"  style="width:100px;" value="{{ paramc.3 }}"/>
+						</td>
+						<td>
+                           <input class="form-control"  style="width:100px;" value="{{ paramc.4 }}"/>
+						</td>
+						<td>
+                            <select  class="form-control" style="width:100px;height:35px;" data-width="auto">
+                                <option value="全部" {% ifequal "全部" paramc.5 %} selected='selected' {% endifequal %}>全部</option>
+                            <option value="保险" {% ifequal "保险" paramc.5 %} selected='selected' {% endifequal %}>保险</option>
+                            <option value="百宝箱" {% ifequal "百宝箱" paramc.5 %} selected='selected' {% endifequal %}>百宝箱</option>
+                            <option value="不参加" {% ifequal "不参加" paramc.5 %} selected='selected' {% endifequal %}>不参加</option>
+                             </select>
+
+						</td>
+						<td>
+                           <input class="form-control"  style="width:100px;" value="{{ paramc.6 }}"/>
+						</td>
+                        <td>
+                           <input class="form-control"  style="width:100px;" value="{{ paramc.7 }}"/>
+						</td>
+                        <td>
+                           <input class="form-control"  style="width:100px;" value="{{ paramc.8 }}"/>
+						</td>
+                        <td>
+                            <select  class="form-control" style="width:120px;height:35px;"  data-width="auto">
+                             <option value="不参加" {% ifequal "不参加" paramc.9 %} selected='selected' {% endifequal %}>不参加</option>
+                            <option value="全面保" {% ifequal "全面保" paramc.9 %} selected='selected' {% endifequal %}>全面保</option>
+                            <option value="碎碎平安" {% ifequal "碎碎平安" paramc.9 %} selected='selected' {% endifequal %}>碎碎平安</option>
+                             </select>
+						</td>
+                        <td>
+                            <select  class="form-control" style="width:150px;height:35px;"  data-width="auto">
+                            <option value="轮循" {% ifequal "轮循" paramc.10 %} selected='selected' {% endifequal %}>轮循</option>
+                             <option value="P2P_PPM" {% ifequal "P2P_PPM" paramc.10 %} selected='selected' {% endifequal %}>P2P_PPM</option>
+                             <option value="P2P_YNXT" {% ifequal "P2P_YNXT" paramc.10 %} selected='selected' {% endifequal %}>P2P_YNXT</option>
+                            <option value="P2P_HBXD" {% ifequal "P2P_HBXD" paramc.10 %} selected='selected' {% endifequal %}>P2P_HBXD</option>
+                            <option value="P2P_JDLC" {% ifequal "P2P_JDLC" paramc.10 %} selected='selected' {% endifequal %}>P2P_JDLC</option>
+                            <option value="XT_JH" {% ifequal "XT_JH" paramc.10 %} selected='selected' {% endifequal %}>XT_JH</option>
+                            <option value="P2P_WCW" {% ifequal "P2P_WCW" paramc.10 %} selected='selected' {% endifequal %}>P2P_WCW</option>
+                            <option value="P2P_TBJ" {% ifequal "P2P_TBJ" paramc.10 %} selected='selected' {% endifequal %}>P2P_TBJ</option>
+                            <option value="P2P_DR" {% ifequal "P2P_DR" paramc.10 %} selected='selected' {% endifequal %}>P2P_DR</option>
+                            <option value="P2P_WCW_KD" {% ifequal "P2P_WCW_KD" paramc.10 %} selected='selected' {% endifequal %}>P2P_WCW_KD</option>
+                            <option value="XD_LDJK" {% ifequal "XD_LDJK" paramc.10 %} selected='selected' {% endifequal %}>XD_LDJK</option>
+                             </select>
+						</td>
+                        <td>
+                            <select  class="form-control" style="width:70px;height:35px;" data-width="auto">
+                             <option value="s" {% ifequal "s" paramc.11 %} selected='selected' {% endifequal %}>s</option>
+                            <option value="pr" {% ifequal "pr" paramc.11 %} selected='selected' {% endifequal %}>pr</option>
+                            <option value="r" {% ifequal "r" paramc.11 %} selected='selected' {% endifequal %}>r</option>
+                            <option value="y" {% ifequal "y" paramc.11 %} selected='selected' {% endifequal %}>y</option>
+                            <option value="a" {% ifequal "a" paramc.11 %} selected='selected' {% endifequal %}>a</option>
+                             </select>
+						</td>
+                            <td class="cell_input" onclick="deletetr(this)">
+                                    <button type="button"  class="btn btn-xs btn-link">删除</button>
+                            </td>
+					</tr>
+                {% endfor %}
+                {% endifequal %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+</body>
+    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/scripts.js"></script>
+    <script type="text/javascript" src="../static/js/layer.js"></script>
+</html>

@@ -1,0 +1,764 @@
+#------------------------------------
+#作者：陈镜旭  日期：2018年12月
+#-----------------------------------
+# start 主页 -----------------------------------------------------------------------------------------------------------
+#底部菜单栏
+# 0
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/bottom_icon
+  optype: click
+  index:
+  text:
+
+# 1
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/bottom_icon
+  optype: click
+  index: 1
+  text:
+
+# 2
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/bottom_icon
+  optype: click
+  index: 2
+  text:
+
+# 3
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/bottom_icon
+  optype: click
+  index: 3
+  text:
+
+# 4
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/bottom_icon
+  optype: click
+  index: 4
+  text:
+# End 主页 -----------------------------------------------------------------------------------------------------------
+
+
+# Start 登录主页 -----------------------------------------------------------------------------------------------------------
+
+# 5 title
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_welcome
+  optype:
+  index:
+  text:
+
+# 6 account
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/et_content
+  optype: send_keys
+  index: 0
+  text:
+
+# 7 password or SMSCode
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/et_content
+  optype: send_keys
+  index: 1
+  text:
+
+# 8 get SMSCode
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_send_code
+  optype: click
+  index:
+  text:
+
+# 9 btn:login  or jump to setting center after login
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_login
+  optype: click
+  index:
+  text:
+
+# 10 btn: password login
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_change_login
+  optype: click
+  index:
+  text:
+
+# 11 btn:SMS login
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_sms_login
+  optype: click
+  index:
+  text:
+
+# 12 btn:jump register
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_register
+  optype: click
+  index:
+  text:
+
+# 13 btn:back to last page
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/iv_back
+  optype: click
+  index:
+  text:
+
+# 14 btn:login question
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_login_question
+  optype: click
+  index:
+  text:
+
+# 15 btn:watch password
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/iv_watch
+  optype: click
+  index:
+  text:
+
+# End 登录主页 -----------------------------------------------------------------------------------------------------------
+
+
+# start 个人中心主页----------------------------------------------------------------------------------------------------------
+#16 center_title
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/top_tab_center_title
+  optype: click
+  index:
+  text:
+#17 login
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_login
+  optype: click
+  index:
+  text:
+
+#18 jump to open vip page
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/iv_user_vip
+  optype: click
+  index:
+  text:
+
+#19 message
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/top_tab_right_image
+  optype: click
+  index:
+  text:
+
+# my orders bellow------------------------------------------------------------------------------------------------------
+#20 browse all orders
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("查看全部订单")
+  optype: click
+  index:
+  text:
+
+#21 waiting pay
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_waiting_pay
+  optype: click
+  index:
+  text:
+
+#22 down payment
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_down_payment
+  optype: click
+  index:
+  text:
+
+#23 waiting receive
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_waiting_receive
+  optype: click
+  index:
+  text:
+
+#24 order done
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_finished
+  optype: click
+  index:
+  text:
+
+# End my orders bellow------------------------------------------------------------------------------------------------------
+
+#25 my card
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_my_card
+  optype: click
+  index:
+  text:
+
+#26 my score
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_my_points
+  optype: click
+  index:
+  text:
+
+#27 my collection
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_my_collection
+  optype: click
+  index:
+  text:
+
+#28 我的福利
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_my_welfare
+  optype: click
+  index:
+  text:
+
+#29 门店分期
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_store_staging
+  optype: click
+  index:
+  text:
+
+#30 我的奖励
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/rl_my_reward
+  optype: click
+  index:
+  text:
+
+#31 上传凭证
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_upload_voucher
+  optype: click
+  index:
+  text:
+
+#32 上传凭证
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_upload_voucher
+  optype: click
+  index:
+  text:
+
+
+#33 结清证明
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_clearance_certificate
+  optype: click
+  index:
+  text:
+
+#34 setting
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_my_collection
+  optype: click
+  index:
+  text:
+
+#35 about app
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_about_mall
+  optype: click
+  index:
+  text:
+
+#36 jump  to setting center
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/iv_avatar
+  optype: click
+  index:
+  text:
+
+# End 个人中心主页------------------------------------------------------------------------------------------------------
+
+
+# Start 注册 -----------------------------------------------------------------------------------------------------------
+#37 title
+-
+  byType: -Android uiautomator
+  cval: new UiSelector.text("欢迎注册即有生活")
+  optype:
+  index:
+  text:
+
+#38 phone
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/et_content
+  optype: send_keys
+  index: 0
+  text:
+
+#39 get vCode
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_send_code
+  optype: click
+  index:
+  text:
+
+#40 vCode
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/et_content
+  optype: send_keys
+  index: 1
+  text: 123456
+
+#41 agree the protocol
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/cb_agreement
+  optype: click
+  index:
+  text:
+
+#42 jump to protocol
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_agreement
+  optype: click
+  index:
+  text:
+
+#43 submit: next
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_next
+  optype: click
+  index:
+  text:
+
+#register:step2,set the password
+
+#44 title
+-
+  byType: -Android uiautomator
+  cval: new UiSelector.text("设置登录密码")
+  optype:
+  index:
+  text:
+
+#45 pwd
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/et_content
+  optype: send_keys
+  index: 0
+  text:
+
+#46 confirm pwd
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/et_content
+  optype: send_keys
+  index: 1
+  text:
+
+#47 register Done
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_complete
+  optype: click
+  index:
+  text:
+# End 注册 -------------------------------------------------------------------------------------------------------------
+
+# End 设置中心----------------------------------------------------------------------------------------------------
+#48 jump to complete personal info
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_perfect_info
+  optype: click
+  index:
+  text:
+
+#49 jump to address management
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_delivery_address
+  optype: click
+  index:
+  text:
+
+#50 jump to my bankcard
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_bank_card
+  optype: click
+  index:
+  text:
+
+#51 jump to security center
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_security_center
+  optype: click
+  index:
+  text:
+
+#52 jump to my consultant(顾问）
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_my_consultant
+  optype: click
+  index:
+  text:
+
+#53 logout
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_finish
+  optype: click
+  index:
+  text:
+# End 设置中心----------------------------------------------------------------------------------------------------
+
+
+# Start 设置手势密码页--------------------------------------------------------------------------------------------------
+#54 register Done
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/top_tab_right_text
+  optype: click
+  index:
+  text:
+
+# End 设置手势密码页----------------------------------------------------------------------------------------------------
+
+
+#  start 激活--------------------------------------------------------------------------
+
+#55 激活入口（滚动条）
+-
+  byType: -Andorid uiautomator
+  cval: new UiSelector.text("您还未开通钱包")
+  optype: el
+  index:
+  text:
+
+#56 姓名
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/et_name
+  optype: send_keys
+  index:
+  text:
+
+#57 身份证号
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/et_ident
+  optype: send_keys
+  index:
+  text:
+
+#58 身份证号
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_next
+  optype: click
+  index:
+  text:
+
+
+#59 身份证正面拍照
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_default_front
+  optype: click
+  index:
+  text:
+
+#60 身份证反面拍照
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/ll_default_back
+  optype: click
+  index:
+  text:
+
+
+#61 camera shot btn
+-
+  byType: id
+  cval: com.android.camera:id/shutter_button
+  optype: click
+  index:
+  text:
+
+#62 camera done btn
+-
+  byType: id
+  cval: com.android.camera:id/btn_done
+  optype: click
+  index:
+  text:
+
+#63 name
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/et_name_front
+  optype: send_keys
+  index:
+  text:
+
+#64 idNo
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/et_idcard_front
+  optype: send_keys
+  index:
+  text:
+
+#65 police department
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/et_office_back
+  optype: send_keys
+  index:
+  text:
+
+#66 next
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_next
+  optype: click
+  index:
+  text:
+
+#67address jump
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_choose_address
+  optype: click
+  index:
+  text:
+
+#68 address province city county
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/et_address_front
+  optype: send_keys
+  index:
+  text:
+
+#69 date start
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_date_start
+  optype: click
+  index:
+  text:
+
+#70 date end
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_date_end
+  optype: click
+  index:
+  text:
+
+#71 date end
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_right
+  optype: click
+  index:
+  text:
+
+ #绑定银行卡------------------------------------------------------
+
+#72 owner name
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/et_name
+  optype: click
+  index:
+  text:
+
+#73 jump to select bank
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/rl_selected_bank
+  optype: click
+  index:
+  text:
+
+#74 bankcard number
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/et_bank_no
+  optype: send_keys
+  index:
+  text:
+
+#75 bankcard phone
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/et_phone
+  optype: send_keys
+  index:
+  text:
+
+#76 jump to protocal page
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/cb_check_authorization
+  optype: click
+  index:
+  text:
+
+#77 submit
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_activation
+  optype: click
+  index:
+  text:
+
+#78 protocal page:back
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/top_left_image
+  optype: click
+  index:
+  text:
+
+#79 protocal page:agree btn
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_auth
+  optype: click
+  index:
+  text:
+
+#80 vcode
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/et_code
+  optype: send_keys
+  index:
+  text:
+
+#81 resent
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_send_code
+  optype: click
+  index:
+  text:
+
+#82 confirm
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_commit
+  optype: click
+  index:
+  text:
+
+#激活成功提示页
+
+#83 toast success
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_status
+  optype: el
+  index:
+  text:
+
+#84 jump to set pay password
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_set_transaction_pwd
+  optype: click
+  index:
+  text:
+
+#85 password
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/input_view_pwd
+  optype: send_keys
+  index:
+  text:
+
+#86 success toast
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_status
+  optype: el
+  index:
+  text:
+
+#87 back to first page
+-
+  byType: id
+  cval: com.giveu.shoppingmall:id/tv_back
+  optype: click
+  index:
+  text:
+#  End 激活--------------------------------------------------------------------------
+# 88
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("立即体验")
+  optype: click
+  index:
+  text:
+# 89
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("允许")
+  optype: click
+  index:
+  text:
+
+
+
+
+
+
+
+

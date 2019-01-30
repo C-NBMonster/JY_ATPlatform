@@ -1,0 +1,152 @@
+[2019-01-22 09:27:56,339] - logger.py] - INFO: 即有宝提单开始执行
+[2019-01-22 09:28:05,170] - logger.py] - INFO: 连接服务器失败
+[2019-01-22 09:28:05,181] - logger.py] - INFO: 订单流程开始
+[2019-01-22 09:28:10,221] - logger.py] - INFO: 名称：测试自动化獞鯩
+[2019-01-22 09:28:10,443] - logger.py] - INFO: 名称：测试自动化獞鯩
+[2019-01-22 09:30:04,297] - logger.py] - INFO: 即有宝提单开始执行
+[2019-01-22 09:30:14,864] - logger.py] - INFO: 连接服务器失败
+[2019-01-22 09:30:14,875] - logger.py] - INFO: 订单流程开始
+[2019-01-22 09:30:19,889] - logger.py] - INFO: 名称：测试自动化獞鯩
+[2019-01-22 09:30:20,072] - logger.py] - INFO: 名称：测试自动化獞鯩
+[2019-01-22 16:21:58,716] - logger.py] - INFO: 即有生活开始执行
+[2019-01-22 16:21:59,061] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 16:22:26,079] - logger.py] - INFO: 连接服务器成功
+[2019-01-22 16:22:56,469] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-22 16:23:22,148] - logger.py] - INFO: 连接服务器成功
+[2019-01-22 16:23:22,190] - logger.py] - INFO: 登录即有生活账号:13410342891
+[2019-01-22 16:23:52,929] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-22 16:23:52,941] - logger.py] - INFO: 'bool' object is not subscriptable
+[2019-01-22 16:24:17,904] - logger.py] - INFO: 连接服务器成功
+[2019-01-22 16:24:17,922] - logger.py] - INFO: 登录即有生活账号:13877412744
+[2019-01-22 16:24:31,693] - logger.py] - INFO: 即有生活开始执行
+[2019-01-22 16:24:32,126] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 16:24:34,177] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 4.4.2. The following are available: 127.0.0.1:21503 (5.1.1)
+
+[2019-01-22 16:24:37,225] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 4.4.2. The following are available: 127.0.0.1:21503 (5.1.1)
+
+[2019-01-22 16:24:39,552] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 4.4.2. The following are available: 127.0.0.1:21503 (5.1.1)
+
+[2019-01-22 16:24:48,378] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-22 16:24:48,390] - logger.py] - INFO: 'bool' object is not subscriptable
+[2019-01-22 16:24:58,821] - logger.py] - INFO: 即有生活开始执行
+[2019-01-22 16:24:59,190] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 16:25:00,861] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 4.4.2. The following are available: 127.0.0.1:21503 (5.1.1)
+
+[2019-01-22 16:25:02,577] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 4.4.2. The following are available: 127.0.0.1:21503 (5.1.1)
+
+[2019-01-22 16:25:04,176] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 4.4.2. The following are available: 127.0.0.1:21503 (5.1.1)
+
+[2019-01-22 16:25:34,485] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 16:25:36,336] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 4.4.2. The following are available: 127.0.0.1:21503 (5.1.1)
+
+[2019-01-22 16:25:37,728] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 4.4.2. The following are available: 127.0.0.1:21503 (5.1.1)
+
+[2019-01-22 16:25:39,570] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 4.4.2. The following are available: 127.0.0.1:21503 (5.1.1)
+
+[2019-01-22 16:27:25,530] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 16:27:27,222] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 4.4.2. The following are available: 127.0.0.1:21503 (5.1.1)
+
+[2019-01-22 16:27:28,888] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 4.4.2. The following are available: 127.0.0.1:21503 (5.1.1)
+
+[2019-01-22 16:27:30,606] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 4.4.2. The following are available: 127.0.0.1:21503 (5.1.1)
+
+[2019-01-22 16:39:48,155] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 4.4.2. The following are available: 127.0.0.1:21503 (5.1.1)
+
+[2019-01-22 16:39:49,622] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 4.4.2. The following are available: 127.0.0.1:21503 (5.1.1)
+
+[2019-01-22 16:39:51,006] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 4.4.2. The following are available: 127.0.0.1:21503 (5.1.1)
+
+[2019-01-22 16:47:20,263] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 4.4.2. The following are available: 127.0.0.1:21503 (5.1.1)
+
+[2019-01-22 16:47:22,010] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 4.4.2. The following are available: 127.0.0.1:21503 (5.1.1)
+
+[2019-01-22 16:47:24,098] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 4.4.2. The following are available: 127.0.0.1:21503 (5.1.1)
+
+[2019-01-22 16:53:00,811] - logger.py] - INFO: 连接服务器成功
+[2019-01-22 16:53:00,828] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 16:53:31,748] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-22 16:53:58,058] - logger.py] - INFO: 连接服务器成功
+[2019-01-22 16:53:58,106] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 16:53:58,138] - logger.py] - INFO: 登录即有生活账号:13410342891
+[2019-01-22 16:54:28,909] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-22 16:54:28,921] - logger.py] - INFO: 'bool' object is not subscriptable
+[2019-01-22 16:54:52,950] - logger.py] - INFO: 连接服务器成功
+[2019-01-22 16:54:52,969] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 16:54:53,019] - logger.py] - INFO: 登录即有生活账号:13877412744
+[2019-01-22 16:55:23,881] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-22 16:55:23,893] - logger.py] - INFO: 'bool' object is not subscriptable
+[2019-01-22 16:57:13,358] - logger.py] - INFO: 即有生活开始执行
+[2019-01-22 16:57:34,491] - logger.py] - INFO: 连接服务器成功
+[2019-01-22 16:57:34,513] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 16:58:05,355] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-22 16:58:31,848] - logger.py] - INFO: 连接服务器成功
+[2019-01-22 16:58:31,890] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 16:58:31,996] - logger.py] - INFO: 登录即有生活账号:13410342891
+[2019-01-22 16:59:02,883] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-22 16:59:02,901] - logger.py] - INFO: 'bool' object is not subscriptable
+[2019-01-22 16:59:29,863] - logger.py] - INFO: 连接服务器成功
+[2019-01-22 16:59:29,899] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 16:59:29,948] - logger.py] - INFO: 登录即有生活账号:13877412744
+[2019-01-22 17:00:00,707] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-22 17:00:00,722] - logger.py] - INFO: 'bool' object is not subscriptable
+[2019-01-22 17:00:08,776] - logger.py] - INFO: 即有生活开始执行
+[2019-01-22 17:00:12,367] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 4.4.2. The following are available: 127.0.0.1:21503 (5.1.1)
+
+[2019-01-22 17:00:14,572] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 4.4.2. The following are available: 127.0.0.1:21503 (5.1.1)
+
+[2019-01-22 17:00:16,061] - logger.py] - INFO: Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 4.4.2. The following are available: 127.0.0.1:21503 (5.1.1)
+
+[2019-01-22 17:01:45,709] - logger.py] - INFO: 即有生活开始执行
+[2019-01-22 17:02:04,609] - logger.py] - INFO: 连接服务器成功
+[2019-01-22 17:02:04,636] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 17:02:35,131] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-22 17:02:57,594] - logger.py] - INFO: 连接服务器成功
+[2019-01-22 17:02:57,619] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 17:02:57,635] - logger.py] - INFO: 登录即有生活账号:13410342891
+[2019-01-22 17:03:53,696] - logger.py] - INFO: 连接服务器成功
+[2019-01-22 17:03:53,723] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 17:03:53,739] - logger.py] - INFO: 登录即有生活账号:13877412744
+[2019-01-22 17:04:24,337] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-22 17:04:24,350] - logger.py] - INFO: 'bool' object is not subscriptable
+[2019-01-22 17:12:51,081] - logger.py] - INFO: 即有生活开始执行
+[2019-01-22 17:13:11,364] - logger.py] - INFO: 连接服务器成功
+[2019-01-22 17:13:11,381] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 17:14:16,995] - logger.py] - INFO: 连接服务器成功
+[2019-01-22 17:14:17,020] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 17:14:17,035] - logger.py] - INFO: 登录即有生活账号:13410342891
+[2019-01-22 17:14:47,899] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-22 17:14:47,912] - logger.py] - INFO: 'bool' object is not subscriptable
+[2019-01-22 17:15:08,304] - logger.py] - INFO: 连接服务器成功
+[2019-01-22 17:15:08,319] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 17:15:08,332] - logger.py] - INFO: 登录即有生活账号:13877412744
+[2019-01-22 17:15:38,554] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-22 17:15:38,575] - logger.py] - INFO: 'bool' object is not subscriptable
+[2019-01-22 18:43:44,092] - logger.py] - INFO: 即有生活开始执行
+[2019-01-22 18:44:09,204] - logger.py] - INFO: 连接服务器成功
+[2019-01-22 18:44:09,222] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 18:45:14,059] - logger.py] - INFO: 连接服务器成功
+[2019-01-22 18:45:14,074] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 18:45:14,086] - logger.py] - INFO: 登录即有生活账号:13410342891
+[2019-01-22 18:45:44,332] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-22 18:45:44,348] - logger.py] - INFO: 'bool' object is not subscriptable
+[2019-01-22 18:46:08,568] - logger.py] - INFO: 连接服务器成功
+[2019-01-22 18:46:08,589] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 18:46:08,610] - logger.py] - INFO: 登录即有生活账号:13877412744
+[2019-01-22 18:56:02,903] - logger.py] - INFO: 即有生活开始执行
+[2019-01-22 19:01:44,843] - logger.py] - INFO: 即有生活开始执行
+[2019-01-22 19:07:26,154] - logger.py] - INFO: 即有生活开始执行
+[2019-01-22 19:08:26,400] - logger.py] - INFO: 即有生活开始执行
+[2019-01-22 19:08:29,436] - logger.py] - INFO: 即有生活开始执行
+[2019-01-22 19:19:02,088] - logger.py] - INFO: 即有生活开始执行
+[2019-01-22 19:23:13,938] - logger.py] - INFO: 即有生活开始执行
+[2019-01-22 19:23:37,536] - logger.py] - INFO: 连接服务器成功
+[2019-01-22 19:23:37,554] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 19:24:07,935] - logger.py] - INFO: 元素定位失败:'com.giveu.shoppingmall:id/bottom_icon'
+[2019-01-22 19:24:31,384] - logger.py] - INFO: 连接服务器成功
+[2019-01-22 19:24:31,397] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 19:24:31,409] - logger.py] - INFO: 登录即有生活账号:13410342891
+[2019-01-22 19:24:45,267] - logger.py] - INFO: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[2019-01-22 19:24:50,872] - logger.py] - INFO: 连接服务器失败
+[2019-01-22 19:24:50,884] - logger.py] - INFO: 开始执行即有生活自动化测试用例
+[2019-01-22 19:24:50,896] - logger.py] - INFO: 登录即有生活账号:13877412744
+[2019-01-22 19:24:51,086] - logger.py] - INFO: 'bool' object has no attribute 'find_elements'

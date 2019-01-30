@@ -1,0 +1,1574 @@
+<!-- 作者：吴俊威  日期：2018年8月 -->
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type"content="text/html;charset=utf-8">
+    <title>Title</title>
+</head>
+<body>
+{#    <div>#}
+{#        <dl>#}
+{#            <dt>#}
+{#                <h2>4.测试质量评估</h2>#}
+{#                <h3>4.1.DevSuite缺陷统计与分析</h3>#}
+{#            </dt>#}
+{#        </dl>#}
+{#    </div>#}
+{#    <div class="container-fluid">#}
+{#	<div class="row">#}
+{#		<div class="col-md-12">#}
+{#			<!--<input type="text" id="IDteet" value={{syck}} disabled='disabled' style="width:50px;">#}
+{#			<button type="button" id="IDbnt" class="btn btn-xs btn-link" onclick="insertcol(),bugval()">统计</button>#}
+{#			<button type="button" id="IDbnt2" class="btn btn-xs btn-link" onclick="delcol()">重置</button>-->#}
+{#			<table class="table table-bordered" id="table_1">#}
+{#				<thead>#}
+{#					<tr>#}
+{#						<th>#}
+{##}
+{#						</th>#}
+{#                        <th>#}
+{##}
+{#						</th>#}
+{##}
+{#					</tr>#}
+{#				</thead>#}
+{#				<tbody>#}
+{#					<tr>#}
+{#                        <th rowspan="6">缺陷数</th>#}
+{#                        <th >P1（致命）</th>#}
+{##}
+{#					</tr>#}
+{#					<tr>#}
+{#                        <th >P2（严重）</th>#}
+{##}
+{##}
+{#					</tr>#}
+{#					<tr>#}
+{#                        <th >P3（一般）</th>#}
+{##}
+{##}
+{#					</tr>#}
+{#					<tr>#}
+{#                        <th >P4（微小）</th>#}
+{##}
+{##}
+{#					</tr>#}
+{#					<tr>#}
+{#                        <th >P5（建议）</th>#}
+{##}
+{##}
+{#					</tr>#}
+{#                    <tr>#}
+{#                        <th >总计</th>#}
+{##}
+{##}
+{#					</tr>#}
+{#                <tr>#}
+{#                        <th rowspan="6">有效缺陷数</th>#}
+{#                        <th >P1（致命）</th>#}
+{##}
+{##}
+{#					</tr>#}
+{#					<tr>#}
+{#                        <th >P2（严重）</th>#}
+{##}
+{##}
+{#					</tr>#}
+{#					<tr>#}
+{#                        <th >P3（一般）</th>#}
+{##}
+{##}
+{#					</tr>#}
+{#					<tr>#}
+{#                        <th >P4（微小）</th>#}
+{##}
+{##}
+{#					</tr>#}
+{#					<tr>#}
+{#                        <th >P5（建议）</th>#}
+{##}
+{##}
+{#					</tr>#}
+{#                    <tr>#}
+{#                        <th >总计</th>#}
+{##}
+{##}
+{#					</tr>#}
+{#                <tr>#}
+{#                        <th colspan="2" >缺陷NT次数</th>#}
+{##}
+{##}
+{#					</tr>#}
+{#					<tr>#}
+{#                        <th colspan="2" >缺陷修复引发</th>#}
+{##}
+{##}
+{#					</tr>#}
+{#					<tr>#}
+{#                        <th colspan="2" >遗留缺陷数</th>#}
+{##}
+{##}
+{#					</tr>#}
+{#					<tr>#}
+{#                        <th colspan="2" >遗留缺陷率</th>#}
+{##}
+{##}
+{#					</tr>#}
+{##}
+{#				</tbody>#}
+{#			</table>#}
+{#		</div>#}
+{#	</div>#}
+{#</div>#}
+<dt><h4>缺陷分布图</h4></dt>
+<script type="text/javascript" src="../static/js/jscharts.js"></script>
+ <div>
+<div id="chart_container" class="test" id="testtt">Loading chart...</div>
+<script type="text/javascript" >
+var myChart = new JSChart('chart_container', 'pie', '');
+myChart.setDataArray([['致命',1],['严重',4],['一般',12],['微小',44],['建议',11]]);
+myChart.colorize(['#FF0000','#3366FB','#66FF33','#99CDFB','#F8CC00']);
+myChart.setSize(900, 300);
+myChart.setTitle('按照缺陷等级(%)');
+myChart.setPieRadius(95);
+myChart.setTitleColor('#505050');
+myChart.setPieUnitsColor('#505050');
+myChart.setPieValuesOffset(-15);
+myChart.setLegendShow(true);
+myChart.setLegendPosition('right');
+myChart.setLegend('#FF0000', '致命: 5 ');
+myChart.setLegend('#3366FB', '严重: 8 ');
+myChart.setLegend('#66FF33', '一般: 9 ');
+myChart.setLegend('#99CDFB', '微小: 10 ');
+myChart.setLegend('#F8CC00', '建议: 1 ');
+myChart.setLegend('#FFFFFF', '    总数:  33');
+myChart.draw();
+</script>
+     </div>
+{#<dt><h4>4.1.1. 有效缺陷严重程度分布图</h4></dt>#}
+{#<script type="text/javascript" src="../static/js/jscharts.js"></script>#}
+{# <div>#}
+{#<div id="chart_container" class="test" id="testtt">Loading chart...</div>#}
+{#<script type="text/javascript" >#}
+{#var Listp = {{ Listp|safe }};#}
+{#var syck = {{ syck|safe }};#}
+{#c_num=parseInt(syck);#}
+{#var myChart = new JSChart('chart_container', 'pie', '');#}
+{#myChart.setDataArray([[pcentcount(Listp[c_num][0],Listp[c_num][5]),Listp[c_num][0]],[pcentcount(Listp[c_num][1],Listp[c_num][5]),Listp[c_num][1]],[pcentcount(Listp[c_num][2],Listp[c_num][5]),Listp[c_num][2]],[pcentcount(Listp[c_num][3],Listp[c_num][5]),Listp[c_num][3]],[pcentcount(Listp[c_num][4],Listp[c_num][5]),Listp[c_num][4]]]);#}
+{#myChart.colorize(['#FF0000','#3366FB','#66FF33','#99CDFB','#F8CC00']);#}
+{#myChart.setSize(900, 300);#}
+{#myChart.setTitle('按照缺陷等级(%)');#}
+{#myChart.setPieRadius(95);#}
+{#myChart.setTitleColor('#505050');#}
+{#myChart.setPieUnitsColor('#505050');#}
+{#myChart.setPieValuesOffset(-15);#}
+{#myChart.setLegendShow(true);#}
+{#myChart.setLegendPosition('right');#}
+{#myChart.setLegend('#FF0000', 'P1 致命:  '+Listp[c_num][0] +'    '+pcentcount(Listp[c_num][0],Listp[c_num][5]));#}
+{#myChart.setLegend('#3366FB', 'P2 严重:  '+Listp[c_num][1] +'    '+pcentcount(Listp[c_num][1],Listp[c_num][5]));#}
+{#myChart.setLegend('#66FF33', 'P3 一般:  '+Listp[c_num][2] +'    '+pcentcount(Listp[c_num][2],Listp[c_num][5]));#}
+{#myChart.setLegend('#99CDFB', 'P4 微小:  '+Listp[c_num][3] +'    '+pcentcount(Listp[c_num][3],Listp[c_num][5]));#}
+{#myChart.setLegend('#F8CC00', 'P5 建议:  '+Listp[c_num][4] +'    '+pcentcount(Listp[c_num][4],Listp[c_num][5]));#}
+{#myChart.setLegend('#FFFFFF', '    总数:  '+Listp[c_num][5] +'     100%');#}
+{#myChart.draw();#}
+{#</script>#}
+{#<dt><h4>4.1.2. 有效缺陷模块分布图</h4></dt>#}
+{#<div id="chart_conta">Loading chart...</div>#}
+{#<script type="text/javascript">#}
+{#var modlist = {{ modlist|safe }};#}
+{#var modblist = {{ modblist|safe }};#}
+{#var modklist = {{ modklist|safe }};#}
+{#var modslist = {{ modslist|safe }};#}
+{#var modglist = {{ modglist|safe }};#}
+{#var myChart = new JSChart('chart_conta', 'pie', '');#}
+{#myChart.setDataArray(modklist);#}
+{#myChart.colorize(modlist);#}
+{#myChart.setSize(900, 300);#}
+{#myChart.setTitle('按照模块(%)');#}
+{#myChart.setPieRadius(95);#}
+{#myChart.setTitleColor('#505050');#}
+{#myChart.setPieUnitsColor('#505050');#}
+{#myChart.setPieValuesOffset(-15);#}
+{#myChart.setLegendShow(true);#}
+{#myChart.setLegendPosition('right');#}
+{# for(var i=0;i<modslist;i++)#}
+{# {#}
+{#myChart.setLegend(modlist[i],modblist[i]+'    '+modklist[i][1]+'    '+modklist[i][0]);#}
+{#}#}
+{#myChart.setLegend('#FFFFFF', '总计：'+'    '+modglist+'    '+'100%');#}
+{#myChart.draw();#}
+{#</script>#}
+{##}
+{#<dt><h4>4.1.3. 有效缺陷趋势图</h4></dt>#}
+{##}
+{#<div id="dateday">JSCharts...</div>#}
+{#<script type="text/javascript">#}
+{#var dyglist = {{dyglist|safe }};#}
+{#var dysumlist = {{dysumlist|safe }};#}
+{#var dyvallist = {{dyvallist|safe }};#}
+{#var dnumlist = {{dnumlist|safe }};#}
+{#//var Typeelist = {{Typeelist|safe }};#}
+{#var myChart = new JSChart('dateday', 'line', '');#}
+{#myChart.setDataArray(dyvallist);#}
+{#myChart.colorize(['#3E90C9','#3E90C9','#3E90C9','#3E90C9','#3E90C9','#3E90C9','#3E90C9','#3E90C9','#3E90C9','#3E90C9','#3E90C9']);#}
+{#myChart.setSize(800,300);#}
+{#myChart.setIntervalEndY(80);//后面修改bug限制值#}
+{#myChart.setIntervalStartY(0);#}
+{#myChart.setAxisValuesNumberY(9);#}
+{#myChart.setTitle('趋势 按照所属产品(日)(时期:'+dyglist[0]+'--'+dyglist[1]+')');#}
+{#myChart.setTitleFontSize(10);#}
+{#myChart.setTitleColor('#424342');#}
+{#myChart.setAxisValuesColor('#444444');#}
+{#myChart.setAxisNameY('');#}
+{#myChart.setAxisNameX('天');#}
+{#myChart.setAxisNameFontSize(9);#}
+{#myChart.setShowXValues(false);#}
+{# for(var i=0;i<dnumlist;i++)#}
+{# {#}
+{#myChart.setLabelX(dysumlist[i]);#}
+{#}#}
+{#myChart.setLineColor('#D92323');#}
+{# for(var j=0;j<dnumlist;j++)#}
+{# {#}
+{#myChart.setTooltip(dyvallist[j]);#}
+{#}#}
+{#myChart.setFlagRadius(0);#}
+{#if (dnumlist>1) {#}
+{#myChart.draw();#}
+{#}#}
+{#</script>#}
+{##}
+{#<div id="roundid">JSCharts...</div>#}
+{#<script type="text/javascript">#}
+{#var datplist = {{ datplist|safe }};#}
+{#var datpnlist = {{ datpnlist|safe }};#}
+{#var syck = {{ syck|safe }};#}
+{#var Typeelist = {{Typeelist|safe }};#}
+{#//var tn=String(Typeelist).length#}
+{#var cbug=(Math.ceil(Typeelist/80))*80; //按刻度8份来算的Math.ceil,Math.floor#}
+{#c_num=parseInt(syck);#}
+{#var myChart = new JSChart('roundid', 'line', '');#}
+{#myChart.setDataArray(datplist[0],'致命缺陷');#}
+{#myChart.setDataArray(datplist[1],'严重缺陷');#}
+{#myChart.setDataArray(datplist[2],'一般缺陷');#}
+{#myChart.setDataArray(datplist[3],'微小缺陷');#}
+{#myChart.setDataArray(datplist[4],'建议缺陷');#}
+{#myChart.colorize(['#3E90C9','#3E90C9','#3E90C9','#3E90C9','#3E90C9']);#}
+{#myChart.setSize(800,300);#}
+{#myChart.setIntervalEndY(cbug);//后面修改值，改为动态取#}
+{#myChart.setIntervalStartY(0);#}
+{#myChart.setAxisValuesNumberY(9);#}
+{#myChart.setTitle('按严重程度(轮次)');#}
+{#//setTooltipOffset(0);#}
+{#myChart.setTitleFontSize(10);#}
+{#myChart.setTitleColor('#424342');#}
+{#myChart.setAxisValuesColor('#444444');#}
+{#myChart.setAxisNameY('');#}
+{#myChart.setAxisNameX('提交轮次');#}
+{#myChart.setAxisNameFontSize(9);#}
+{#myChart.setShowXValues(false);#}
+{#myChart.setLineColor('#FF0000','致命缺陷');#}
+{# for(var i=0;i<c_num;i++){#}
+{#myChart.setTooltip(datpnlist[0][i]);#}
+{#}#}
+{#myChart.setLineColor('#3366FB','严重缺陷');#}
+{# for(var i=0;i<c_num;i++){#}
+{#myChart.setTooltip(datpnlist[1][i]);#}
+{#}#}
+{#myChart.setLineColor('#66FF33','一般缺陷');#}
+{# for(var i=0;i<c_num;i++){#}
+{#myChart.setTooltip(datpnlist[2][i]);#}
+{#}#}
+{#myChart.setLineColor('#99CDFB','微小缺陷');#}
+{# for(var i=0;i<c_num;i++){#}
+{#myChart.setTooltip(datpnlist[3][i]);#}
+{#}#}
+{#myChart.setLineColor('#F8CC00','建议缺陷');#}
+{# for(var i=0;i<c_num;i++){#}
+{#myChart.setTooltip(datpnlist[4][i]);#}
+{#}#}
+{#myChart.setFlagRadius(0);#}
+{#myChart.setLegendShow(true);#}
+{#myChart.setLegendPosition('bottom center');#}
+{#if (c_num>1) {#}
+{#myChart.draw();#}
+{#}#}
+{#</script>#}
+{##}
+{#<dt><h4>4.1.4. 有效缺陷所属类型分布图</h4></dt>#}
+{##}
+{#<div id="chart_cccta">Loading chart...</div>#}
+{#<script type="text/javascript">#}
+{#var Typealist = {{Typealist|safe }};#}
+{#var Typeblist = {{Typeblist|safe }};#}
+{#var Typeclist = {{Typeclist|safe }};#}
+{#var Typedlist = {{Typedlist|safe }};#}
+{#var Typeelist = {{Typeelist|safe }};#}
+{#var myChart = new JSChart('chart_cccta', 'pie', '');#}
+{#myChart.setDataArray(Typeclist);#}
+{#myChart.colorize(Typealist);#}
+{#myChart.setSize(900, 300);#}
+{#myChart.setTitle('缺陷个数(%)');#}
+{#myChart.setPieRadius(95);#}
+{#myChart.setTitleColor('#505050');#}
+{#myChart.setPieUnitsColor('#505050');#}
+{#myChart.setPieValuesOffset(-15);#}
+{#myChart.setLegendShow(true);#}
+{#myChart.setLegendPosition('right');#}
+{# for(var m=0;m<Typedlist;m++)#}
+{#{#}
+{#myChart.setLegend(Typealist[m],''+Typeblist[m]+'');#}
+{#}#}
+{#myChart.draw();#}
+{#</script>#}
+{#</div>#}
+
+
+
+
+
+
+
+
+
+{#<div>#}
+{#        <dl>#}
+{#            <dt>#}
+{#                <h3>4.2.非DevSuite缺陷统计与分析</h3>#}
+{#            </dt>#}
+{#        </dl>#}
+{#    </div>#}
+{#    <div class="container-fluid">#}
+{#	<div class="row">#}
+{#		<div class="col-md-12">#}
+{#			<table class="table table-bordered" border="1">#}
+{#				<thead>#}
+{#					<tr>#}
+{#						<th>#}
+{##}
+{#						</th>#}
+{#                        <th>#}
+{##}
+{#						</th>#}
+{#                        <th>#}
+{#                            需求说明书#}
+{#						</th>#}
+{#						<th>#}
+{#							需求规格说明书#}
+{#						</th>#}
+{#						<th>#}
+{#							快速原型#}
+{#						</th>#}
+{#						<th>#}
+{#							前端HTML文件#}
+{#						</th>#}
+{#                        <th>#}
+{#							测试计划#}
+{#						</th>#}
+{#						<th>#}
+{#                            思维导图#}
+{#						</th>#}
+{#						<th>#}
+{#                            测试用例#}
+{#						</th>#}
+{#						<th>#}
+{#                            测试报告#}
+{#						</th>#}
+{#						<th>#}
+{#                            个数总计#}
+{#						</th>#}
+{#						<th>#}
+{#                            加权总计#}
+{#						</th>#}
+{#					</tr>#}
+{#				</thead>#}
+{#				<tbody>#}
+{#					<tr>#}
+{#                        <th rowspan="6" align="center" valign="middle">缺陷数</th>#}
+{#                        <th >P1（致命）</th>#}
+{#						<td class="cell_input" >#}
+{#						 <input type="tel" name="text1" id="1" value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,0,200,300,3),countb(1,0,400,408,409)">#}
+{#						</td>#}
+{#                        <td class="cell_input">#}
+{#						 <input type="tel" name="text1" id="2"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,0,200,300,3),countb(1,1,401,408,409)">#}
+{#						</td>#}
+{#                        <td class="cell_input">#}
+{#						<input type="tel" name="text1" id="3"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,0,200,300,3),countb(1,2,402,408,409)">#}
+{#						</td>#}
+{#                        <td class="cell_input">#}
+{#						 <input type="tel" name="text1" id="4"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,0,200,300,3),countb(1,3,403,408,409)">#}
+{#						</td>#}
+{#                        <td class="cell_input">#}
+{#						<input type="tel" name="text1" id="5"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,0,200,300,3),countb(1,4,404,408,409)">#}
+{#						</td>#}
+{#                        <td class="cell_input">#}
+{#						<input type="tel" name="text1" id="6"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,0,200,300,3),countb(1,5,405,408,409)">#}
+{#						</td>#}
+{#                        <td class="cell_input">#}
+{#						 <input type="tel" name="text1" id="7"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,0,200,300,3),countb(1,6,406,408,409)">#}
+{#						</td>#}
+{#                        <td class="cell_input">#}
+{#						 <input type="tel" name="text1" id="8"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,0,200,300,3),countb(1,7,407,408,409)">#}
+{#						</td>#}
+{#                        <td class="cell_input">#}
+{#						<input type="tel" name="txt1" id="200" value="0"  >#}
+{#						</td>#}
+{#                        <td class="cell_input">#}
+{#						<input type="tel" name="tct1" id="300" value="0"  >#}
+{#						</td>#}
+{#					</tr>#}
+{#					<tr>#}
+{#                        <th >P2（严重）</th>#}
+{#						<td  class="cell_input">#}
+{#                          <input type="tel" name="text1" id="9"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,8,201,301,2),countb(1,0,400,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                          <input type="tel" name="text1" id="10"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,8,201,301,2),countb(1,1,401,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                          <input type="tel" name="text1" id="11"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,8,201,301,2),countb(1,2,402,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                          <input type="tel" name="text1" id="12"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,8,201,301,2),countb(1,3,403,408,409)">#}
+{#						</td>#}
+{# 						<td  class="cell_input">#}
+{#                          <input type="tel" name="text1" id="13"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,8,201,301,2),countb(1,4,404,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                          <input type="tel" name="text1" id="14"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,8,201,301,2),countb(1,5,405,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                          <input type="tel" name="text1" id="15"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,8,201,301,2),countb(1,6,406,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                          <input type="tel" name="text1" id="16"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,8,201,301,2),countb(1,7,407,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                          <input type="tel" name="txt1" id="201" value="0"  >#}
+{#						</td>#}
+{# 						<td  class="cell_input">#}
+{#                          <input type="tel" name="tct1" id="301" value="0"  >#}
+{#						</td>#}
+{#					</tr>#}
+{#					<tr>#}
+{#                        <th >P3（一般）</th>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text1" id="17"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,16,202,302,1),countb(1,0,400,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                       <input type="tel" name="text1" id="18"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,16,202,302,1),countb(1,1,401,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text1" id="19"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,16,202,302,1),countb(1,2,402,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text1" id="20"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,16,202,302,1),countb(1,3,403,408,409)">#}
+{#						</td>#}
+{#                        <td  class="cell_input">#}
+{#                        <input type="tel" name="text1" id="21"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,16,202,302,1),countb(1,4,404,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text1" id="22"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,16,202,302,1),countb(1,5,405,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text1" id="23"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,16,202,302,1),countb(1,6,406,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text1" id="24"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,16,202,302,1),countb(1,7,407,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="txt1" id="202" value="0"  >#}
+{#						</td>#}
+{#                        <td  class="cell_input">#}
+{#                        <input type="tel" name="tct1" id="302" value="0"  >#}
+{#						</td>#}
+{#					</tr>#}
+{#					<tr>#}
+{#                        <th >P4（微小）</th>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text1" id="25"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,24,203,303,0.2),countb(1,0,400,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                       <input type="tel" name="text1" id="26"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,24,203,303,0.2),countb(1,1,401,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text1" id="27"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,24,203,303,0.2),countb(1,2,402,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text1" id="28"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,24,203,303,0.2),countb(1,3,403,408,409)">#}
+{#						</td>#}
+{#                        <td  class="cell_input">#}
+{#                        <input type="tel" name="text1" id="29"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,24,203,303,0.2),countb(1,4,404,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text1" id="30"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,24,203,303,0.2),countb(1,5,405,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text1" id="31"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,24,203,303,0.2),countb(1,6,406,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text1" id="32"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,24,203,303,0.2),countb(1,7,407,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="txt1" id="203" value="0"  >#}
+{#						</td>#}
+{#                        <td  class="cell_input">#}
+{#                        <input type="tel" name="tct1" id="303" value="0"  >#}
+{#						</td>#}
+{#					</tr>#}
+{#					<tr>#}
+{#                        <th >P5（建议）</th>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text1" id="33"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,32,204,304,0.1),countb(1,0,400,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                       <input type="tel" name="text1" id="34"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,32,204,304,0.1),countb(1,1,401,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text1" id="35"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,32,204,304,0.1),countb(1,2,402,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text1" id="36"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,32,204,304,0.1),countb(1,3,403,408,409)">#}
+{#						</td>#}
+{#                        <td  class="cell_input">#}
+{#                        <input type="tel" name="text1" id="37"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,32,204,304,0.1),countb(1,4,404,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text1" id="38"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,32,204,304,0.1),countb(1,5,405,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text1" id="39"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,32,204,304,0.1),countb(1,6,406,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text1" id="40"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(1,32,204,304,0.1),countb(1,7,407,408,409)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="txt1" id="204" value="0"  >#}
+{#						</td>#}
+{#                        <td  class="cell_input">#}
+{#                        <input type="tel" name="tct1" id="304" value="0"  >#}
+{#						</td>#}
+{#					</tr>#}
+{#                    <tr>#}
+{#                        <th >总计</th>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" id="400" value="0"   >#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" id="401" value="0"  >#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" id="402" value="0"  >#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" id="403" value="0"  >#}
+{#						</td>#}
+{#                        <td  class="cell_input">#}
+{#                        <input type="tel" id="404" value="0"  >#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" id="405" value="0"  >#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" id="406" value="0"  >#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" id="407" value="0"  >#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" id="408" value="0" >#}
+{#						</td>#}
+{#                        <td  class="cell_input">#}
+{#                        <input type="tel" id="409" value="0" >#}
+{#						</td>#}
+{#					</tr>#}
+{#                <tr>#}
+{#                        <th rowspan="6">有效缺陷数</th>#}
+{#                        <th >P1（致命）</th>#}
+{#						<td class="cell_input">#}
+{#						 <input type="tel" name="text2" id="41" value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,0,500,600,3),countb(2,0,700,708,409)">#}
+{#						</td>#}
+{#                        <td class="cell_input">#}
+{#						 <input type="tel" name="text2" id="42"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,0,500,600,3),countb(2,1,701,708,709)">#}
+{#						</td>#}
+{#                        <td class="cell_input">#}
+{#						<input type="tel" name="text2" id="43"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,0,500,600,3),countb(2,2,702,708,709)">#}
+{#						</td>#}
+{#                        <td class="cell_input">#}
+{#						 <input type="tel" name="text2" id="44"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,0,500,600,3),countb(2,3,703,708,709)">#}
+{#						</td>#}
+{#                        <td class="cell_input">#}
+{#						<input type="tel" name="text2" id="45"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,0,500,600,3),countb(2,4,704,708,709)">#}
+{#						</td>#}
+{#                        <td class="cell_input">#}
+{#						<input type="tel" name="text2" id="46"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,0,500,600,3),countb(2,5,705,708,709)">#}
+{#						</td>#}
+{#                        <td class="cell_input">#}
+{#						 <input type="tel" name="text2" id="47"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,0,500,600,3),countb(2,6,706,708,709)">#}
+{#						</td>#}
+{#                        <td class="cell_input">#}
+{#						 <input type="tel" name="text2" id="48"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,0,500,600,3),countb(2,7,707,708,709)">#}
+{#						</td>#}
+{#                        <td class="cell_input">#}
+{#						<input type="tel" name="txt2" id="500" value="0"  >#}
+{#						</td>#}
+{#                        <td class="cell_input">#}
+{#						<input type="tel" name="tct2" id="600" value="0" >#}
+{#						</td>#}
+{#					</tr>#}
+{#					<tr>#}
+{#                        <th >P2（严重）</th>#}
+{#						<td  class="cell_input">#}
+{#                          <input type="tel" name="text2" id="49"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,8,501,601,2),countb(2,0,700,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                          <input type="tel" name="text2" id="50"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,8,501,601,2),countb(2,1,701,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                          <input type="tel" name="text2" id="51"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,8,501,601,2),countb(2,2,702,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                          <input type="tel" name="text2" id="52"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,8,501,601,2),countb(2,3,703,708,709)">#}
+{#						</td>#}
+{# 						<td  class="cell_input">#}
+{#                          <input type="tel" name="text2" id="53"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,8,501,601,2),countb(2,4,704,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                          <input type="tel" name="text2" id="54"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,8,501,601,2),countb(2,5,705,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                          <input type="tel" name="text2" id="55"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,8,501,601,2),countb(2,6,706,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                          <input type="tel" name="text2" id="56"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,8,501,601,2),countb(2,7,707,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                          <input type="tel" name="txt2" id="501" value="0" >#}
+{#						</td>#}
+{# 						<td  class="cell_input">#}
+{#                          <input type="tel" name="tct2" id="601" value="0" >#}
+{#						</td>#}
+{#					</tr>#}
+{#					<tr>#}
+{#                        <th >P3（一般）</th>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text2" id="57"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,16,502,602,1),countb(2,0,700,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                       <input type="tel" name="text2" id="58"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,16,502,602,1),countb(2,1,701,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text2" id="59"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,16,502,602,1),countb(2,2,702,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text2" id="60"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,16,502,602,1),countb(2,3,703,708,709)">#}
+{#						</td>#}
+{#                        <td  class="cell_input">#}
+{#                        <input type="tel" name="text2" id="61"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,16,502,602,1),countb(2,4,704,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text2" id="62"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,16,502,602,1),countb(2,5,705,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text2" id="63"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,16,502,602,1),countb(2,6,706,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text2" id="64"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,16,502,602,1),countb(2,7,707,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="txt2" id="502" value="0" >#}
+{#						</td>#}
+{#                        <td  class="cell_input">#}
+{#                        <input type="tel" name="tct2" id="602" value="0" >#}
+{#						</td>#}
+{#					</tr>#}
+{#					<tr>#}
+{#                        <th >P4（微小）</th>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text2" id="65"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,24,503,603,0.2),countb(2,0,700,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                       <input type="tel" name="text2" id="66"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,24,503,603,0.2),countb(2,1,701,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text2" id="67"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,24,503,603,0.2),countb(2,2,702,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text2" id="68"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,24,503,603,0.2),countb(2,3,703,708,709)">#}
+{#						</td>#}
+{#                        <td  class="cell_input">#}
+{#                        <input type="tel" name="text2" id="69"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,24,503,603,0.2),countb(2,4,704,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text2" id="70"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,24,503,603,0.2),countb(2,5,705,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text2" id="71"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,24,503,603,0.2),countb(2,6,706,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text2" id="72"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,24,503,603,0.2),countb(2,7,707,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="txt2" id="503" value="0" >#}
+{#						</td>#}
+{#                        <td  class="cell_input">#}
+{#                        <input type="tel" name="tct2" id="603" value="0" >#}
+{#						</td>#}
+{#					</tr>#}
+{#					<tr>#}
+{#                        <th >P5（建议）</th>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text2" id="73"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,32,504,604,0.1),countb(2,0,700,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                       <input type="tel" name="text2" id="74"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,32,504,604,0.1),countb(2,1,701,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text2" id="75"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,32,504,604,0.1),countb(2,2,702,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text2" id="76"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,32,504,604,0.1),countb(2,3,703,708,709)">#}
+{#						</td>#}
+{#                        <td  class="cell_input">#}
+{#                        <input type="tel" name="text2" id="77"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,32,504,604,0.1),countb(2,4,704,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text2" id="78"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,32,504,604,0.1),countb(2,5,705,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text2" id="79"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,32,504,604,0.1),countb(2,6,706,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="text2" id="80"  value="0" onmouseover="Inputs(this.id)" onkeyup="counta(2,32,504,604,0.1),countb(2,7,707,708,709)">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" name="txt2" id="504" value="0" >#}
+{#						</td>#}
+{#                        <td  class="cell_input">#}
+{#                        <input type="tel" name="tct2" id="604" value="0" >#}
+{#						</td>#}
+{#					</tr>#}
+{#                    <tr>#}
+{#                        <th >总计</th>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" id="700" value="0" >#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" id="701" value="0" >#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" id="702" value="0" >#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" id="703" value="0" >#}
+{#						</td>#}
+{#                        <td  class="cell_input">#}
+{#                        <input type="tel" id="704" value="0">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" id="705" value="0" >#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" id="706" value="0">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" id="707" value="0">#}
+{#						</td>#}
+{#						<td  class="cell_input">#}
+{#                        <input type="tel" id="708" value="0" >#}
+{#						</td>#}
+{#                        <td  class="cell_input">#}
+{#                        <input type="tel" id="709" value="0" >#}
+{#						</td>#}
+{#					</tr>#}
+{##}
+{#				</tbody>#}
+{#			</table>#}
+{#		</div>#}
+{#	</div>#}
+{#</div>#}
+
+
+{#<dt><h4>1. 各阶段有效缺陷分布图</h4></dt>#}
+{#<table class="table table-bordered" id="tbg" width="20%"  >#}
+{#                        <tbody align="center">#}
+{#                            <tr>#}
+{#                                <th>需求缺陷</th>#}
+{#                                <th>原型缺陷</th>#}
+{#                                <th>UI缺陷</th>#}
+{#                                <th>用例缺陷</th>#}
+{#                                <th>代码缺陷</th>#}
+{#                            </tr>#}
+{#                            <tr>#}
+{#                                <td class="cell_input">#}
+{#                                    <input type="tel" id="rep1" value="0" onmouseover="Inputs(this.id);" onkeyup="chatbug();">#}
+{#                                </td>#}
+{#                                <td class="cell_input">#}
+{#                                    <input type="tel" id="rep2" value="0" onmouseover="Inputs(this.id);" onkeyup="chatbug();">#}
+{##}
+{#                                </td>#}
+{#                                <td class="cell_input">#}
+{#                                    <input type="tel" id="rep3" value="0" onmouseover="Inputs(this.id);" onkeyup="chatbug();">#}
+{#                                </td>#}
+{#                                <td class="cell_input">#}
+{#                                    <input type="tel" id="rep4" value="0" onmouseover="Inputs(this.id);" onkeyup="chatbug();">#}
+{#                                </td>#}
+{#                                <td class="cell_input">#}
+{#                                  <input type="tel" id="rep5" value="0" onmouseover="Inputs(this.id);" onkeyup="chatbug();">#}
+{#                                </td>#}
+{#                            </tr>#}
+{##}
+{#                        </tbody>#}
+{#                    </table>#}
+{#<div id="chart_qxcta"></div>#}
+{#<script type="text/javascript">#}
+{#function chatbug(){#}
+{#var b1=Inputfresh("rep1");#}
+{#var b2=Inputfresh("rep2");#}
+{#var b3=Inputfresh("rep3");#}
+{#var b4=Inputfresh("rep4");#}
+{#var b5=Inputfresh("rep5");#}
+{#var myChart = new JSChart('chart_qxcta', 'pie', '');#}
+{#myChart.setDataArray([['c1',b1],['c2', b2],['c3',b3],['c4', b4],['c5', b5]]);#}
+{#myChart.colorize(['#99CDFB','#66FF33','#3366FB','#F8CC00','#FF0000']);#}
+{#myChart.setSize(600, 300);#}
+{#myChart.setTitle('缺陷个数');#}
+{#myChart.setTitleColor('#0F0F0F');#}
+{#myChart.setPieRadius(95);#}
+{#myChart.setPieValuesColor('#21282F');#}
+{#myChart.setPieValuesFontSize(9);#}
+{#myChart.setPieValuesColor('#FFFFFF');#}
+{#myChart.setPiePosition(200, 150);#}
+{#myChart.setShowXValues(false);#}
+{#myChart.set3D(true);#}
+{#myChart.setLegend('#99CDFB', '需求缺陷');#}
+{#myChart.setLegendShow(true);#}
+{#myChart.setLegendPosition('right');#}
+{#myChart.setLegend('#66FF33', '原型缺陷');#}
+{#myChart.setLegend('#3366FB', 'UI缺陷');#}
+{#myChart.setLegend('#F8CC00', '用例缺陷');#}
+{#myChart.setLegend('#FF0000', '代码缺陷');#}
+{#myChart.draw();#}
+{#}#}
+{#//chatbug();#}
+{#</script>#}
+{#<dt><h4>2. 需求评审有效缺陷分布图</h4></dt>#}
+{#<table class="table table-bordered" id="tbg" width="20%"  >#}
+{#                        <tbody align="center">#}
+{#                            <tr>#}
+{#                                <th>需求考虑不全</th>#}
+{#                                <th>需求细化不明确</th>#}
+{#                                <th>业务逻辑描述混乱</th>#}
+{#                                <th>需求描述冗余</th>#}
+{#                                <th>跟原型不一致</th>#}
+{#								 <th>性能需求问题</th>#}
+{#								 <th>需求模块缺失</th>#}
+{#                            </tr>#}
+{#                            <tr>#}
+{#                                <td class="cell_input">#}
+{#                                    <input type="tel" id="rep6" value="0" onmouseover="Inputs(this.id)" onkeyup="chatxq()">#}
+{#                                </td>#}
+{#                                <td class="cell_input">#}
+{#                                    <input type="tel" id="rep7" value="0" onmouseover="Inputs(this.id)" onkeyup="chatxq()">#}
+{#                                </td>#}
+{#                                <td class="cell_input">#}
+{#                                    <input type="tel" id="rep8" value="0" onmouseover="Inputs(this.id)" onkeyup="chatxq()">#}
+{#                                </td>#}
+{#                                <td class="cell_input">#}
+{#                                    <input type="tel" id="rep9" value="0" onmouseover="Inputs(this.id)" onkeyup="chatxq()">#}
+{#                                </td>#}
+{#                                <td class="cell_input">#}
+{#                                  <input type="tel" id="rep10" value="0" onmouseover="Inputs(this.id)" onkeyup="chatxq()">#}
+{#                                </td>#}
+{#								<td class="cell_input">#}
+{#                                  <input type="tel" id="rep11" value="0" onmouseover="Inputs(this.id)" onkeyup="chatxq()">#}
+{#                                </td>#}
+{#								<td class="cell_input">#}
+{#                                  <input type="tel" id="rep12" value="0" onmouseover="Inputs(this.id)" onkeyup="chatxq()">#}
+{#                                </td>#}
+{#                            </tr>#}
+{##}
+{#                        </tbody>#}
+{#                    </table>#}
+{#<div id="chart_xqps"></div>#}
+{#<script type="text/javascript">#}
+{#function chatxq(){#}
+{#var b6=Inputfresh("rep6");#}
+{#var b7=Inputfresh("rep7");#}
+{#var b8=Inputfresh("rep8");#}
+{#var b9=Inputfresh("rep9");#}
+{#var b10=Inputfresh("rep10");#}
+{#var b11=Inputfresh("rep11");#}
+{#var b12=Inputfresh("rep12");#}
+{#var myChart = new JSChart('chart_xqps', 'pie', '');#}
+{#myChart.setDataArray([['c1', b6],['c2', b7],['c3', b8],['c4', b9],['c5', b10],['c6', b11],['c7',b12]]);#}
+{#myChart.colorize(['#99CDFB','#66FF33','#3366FB','#F8CC00','#FF0000','#F89900','#9999CC']);#}
+{#myChart.setSize(600, 300);#}
+{#myChart.setTitle('需求评审缺陷分类图');#}
+{#myChart.setTitleColor('#0F0F0F');#}
+{#myChart.setPieRadius(95);#}
+{#myChart.setPieValuesColor('#21282F');#}
+{#myChart.setPieValuesFontSize(9);#}
+{#myChart.setPieValuesColor('#FFFFFF');#}
+{#myChart.setPiePosition(200, 150);#}
+{#myChart.setShowXValues(false);#}
+{#myChart.set3D(true);#}
+{#myChart.setLegend('#99CDFB', '需求考虑不全');#}
+{#myChart.setLegendShow(true);#}
+{#myChart.setLegendPosition('right');#}
+{#myChart.setLegend('#66FF33', '需求细化不明确');#}
+{#myChart.setLegend('#3366FB', '业务逻辑描述混乱');#}
+{#myChart.setLegend('#F8CC00', '需求描述冗余');#}
+{#myChart.setLegend('#FF0000', '跟原型不一致');#}
+{#myChart.setLegend('#F89900', '性能需求问题');#}
+{#myChart.setLegend('#9999CC', '需求模块缺失');#}
+{#myChart.draw();#}
+{#}#}
+{#//chatxq();#}
+{#</script>#}
+{# <dt><h4>3. UI易用性测试有效缺陷分布图</h4></dt>#}
+{#<table class="table table-bordered" id="tbg" width="20%"  >#}
+{#                        <tbody align="center">#}
+{#                            <tr>#}
+{#                                <th>兼容性问题</th>#}
+{#                                <th>文字，链接问题</th>#}
+{#                                <th>框架设计问题</th>#}
+{#                                <th>页面排版问题</th>#}
+{#                                <th>与原型不一致</th>#}
+{#                            </tr>#}
+{#                            <tr>#}
+{#                                <td class="cell_input">#}
+{#                                    <input type="tel" id="rep13" value="0" onmouseover="Inputs(this.id)" onkeyup="chatui()" >#}
+{#                                </td>#}
+{#                                <td class="cell_input">#}
+{#                                    <input type="tel" id="rep14" value="0" onmouseover="Inputs(this.id)" onkeyup="chatui()">#}
+{##}
+{#                                </td>#}
+{#                                <td class="cell_input">#}
+{#                                    <input type="tel" id="rep15" value="0" onmouseover="Inputs(this.id)" onkeyup="chatui()">#}
+{#                                </td>#}
+{#                                <td class="cell_input">#}
+{#                                    <input type="tel" id="rep16" value="0" onmouseover="Inputs(this.id)" onkeyup="chatui()">#}
+{#                                </td>#}
+{#                                <td class="cell_input">#}
+{#                                  <input type="tel" id="rep17" value="0" onmouseover="Inputs(this.id)" onkeyup="chatui()">#}
+{#                                </td>#}
+{#                            </tr>#}
+{##}
+{#                        </tbody>#}
+{#                    </table>#}
+{#<div id="chart_qxfl"></div>#}
+{#<script type="text/javascript">#}
+{#function chatui(){#}
+{#var b13=Inputfresh("rep13");#}
+{#var b14=Inputfresh("rep14");#}
+{#var b15=Inputfresh("rep15");#}
+{#var b16=Inputfresh("rep16");#}
+{#var b17=Inputfresh("rep17");#}
+{#var myChart = new JSChart('chart_qxfl', 'pie', '');#}
+{#myChart.setDataArray([['c1',b13],['c2', b14],['c3', b15],['c4', b16],['c5', b17]]);#}
+{#myChart.colorize(['#99CDFB','#66FF33','#3366FB','#F8CC00','#F89900']);#}
+{#myChart.setSize(600, 300);#}
+{#myChart.setTitle('UI缺陷分类图');#}
+{#myChart.setTitleColor('#0F0F0F');#}
+{#myChart.setPieRadius(95);#}
+{#myChart.setPieValuesColor('#21282F');#}
+{#myChart.setPieValuesFontSize(9);#}
+{#myChart.setPieValuesColor('#FFFFFF');#}
+{#myChart.setPiePosition(200, 150);#}
+{#myChart.setShowXValues(false);#}
+{#myChart.set3D(true);#}
+{#myChart.setLegend('#99CDFB', '兼容性问题');#}
+{#myChart.setLegendShow(true);#}
+{#myChart.setLegendPosition('right');#}
+{#myChart.setLegend('#66FF33', '文字，链接问题');#}
+{#myChart.setLegend('#3366FB', '框架设计问题');#}
+{#myChart.setLegend('#F8CC00', '页面排版问题');#}
+{#myChart.setLegend('#F89900', '与原型不一致');#}
+{#myChart.draw();#}
+{#}#}
+{#//chatui();#}
+{#</script>#}
+{#<dt><h4>4. 测试用例有效缺陷分布图</h4></dt>#}
+{#<table class="table table-bordered" id="tbg" width="20%"  >#}
+{#                        <tbody align="center">#}
+{#                            <tr>#}
+{#                                <th>用例不规范</th>#}
+{#                                <th>用例覆盖不全</th>#}
+{#                                <th>需求变更导致用例变更</th>#}
+{#                                <th>用例与功能实现偏差</th>#}
+{#                                <th>需求不明确</th>#}
+{#								 <th>预期结果不明确</th>#}
+{#                            </tr>#}
+{#                            <tr>#}
+{#                                <td class="cell_input">#}
+{#                                    <input type="tel" id="rep18" value="0" onmouseover="Inputs(this.id)" onkeyup="chatfl()">#}
+{#                                </td>#}
+{#                                <td class="cell_input">#}
+{#                                    <input type="tel" id="rep19" value="0" onmouseover="Inputs(this.id)" onkeyup="chatfl()">#}
+{##}
+{#                                </td>#}
+{#                                <td class="cell_input">#}
+{#                                    <input type="tel" id="rep20" value="0" onmouseover="Inputs(this.id)" onkeyup="chatfl()">#}
+{#                                </td>#}
+{#                                <td class="cell_input">#}
+{#                                    <input type="tel" id="rep21" value="0" onmouseover="Inputs(this.id)" onkeyup="chatfl()">#}
+{#                                </td>#}
+{#                                <td class="cell_input">#}
+{#                                  <input type="tel" id="rep22" value="0" onmouseover="Inputs(this.id)" onkeyup="chatfl()">#}
+{#                                </td>#}
+{#								<td class="cell_input">#}
+{#                                  <input type="tel" id="rep23" value="0" onmouseover="Inputs(this.id)" onkeyup="chatfl()">#}
+{#                                </td>#}
+{#                            </tr>#}
+{##}
+{#                        </tbody>#}
+{#                    </table>#}
+{#<div id="chart_casefl"></div>#}
+{#<script type="text/javascript">#}
+{#function chatfl(){#}
+{#var b18=Inputfresh("rep18");#}
+{#var b19=Inputfresh("rep19");#}
+{#var b20=Inputfresh("rep20");#}
+{#var b21=Inputfresh("rep21");#}
+{#var b22=Inputfresh("rep22");#}
+{#var b23=Inputfresh("rep23");#}
+{#var myChart = new JSChart('chart_casefl', 'pie', '');#}
+{#myChart.setDataArray([['c1', b18],['c2', b19],['c3', b20],['c4', b21],['c5', b22],['c6', b23]]);#}
+{#myChart.colorize(['#99CDFB','#66FF33','#3366FB','#F8CC00','#FF0000','#F89900']);#}
+{#myChart.setSize(600, 300);#}
+{#myChart.setTitle('测试用例缺陷分类图');#}
+{#myChart.setTitleColor('#0F0F0F');#}
+{#myChart.setPieRadius(95);#}
+{#myChart.setPieValuesColor('#21282F');#}
+{#myChart.setPieValuesFontSize(9);#}
+{#myChart.setPieValuesColor('#FFFFFF');#}
+{#myChart.setPiePosition(200, 150);#}
+{#myChart.setShowXValues(false);#}
+{#myChart.set3D(true);#}
+{#myChart.setLegend('#99CDFB', '用例不规范');#}
+{#myChart.setLegendShow(true);#}
+{#myChart.setLegendPosition('right');#}
+{#myChart.setLegend('#66FF33', '用例覆盖不全');#}
+{#myChart.setLegend('#3366FB', '需求变更导致用例变更');#}
+{#myChart.setLegend('#F8CC00', '用例与功能实现偏差');#}
+{#myChart.setLegend('#FF0000', '需求不明确');#}
+{#myChart.setLegend('#F89900', '预期结果不明确');#}
+{#myChart.draw();#}
+{#}#}
+{#//chatfl();#}
+{#</script>#}
+
+
+{# <div>#}
+{#        <dl>#}
+{#            <dt>#}
+{#                <h3>4.3.Devsuite测试质量统计</h3>#}
+{#            </dt>#}
+{#        </dl>#}
+{#    </div>#}
+{#    <div class="container-fluid">#}
+{#	<div class="row">#}
+{#		<div class="col-md-12">#}
+{#			<table class="table table-bordered" id="tablec">#}
+{#				<thead>#}
+{#					<tr>#}
+{#                        <th rowspan="2">序号</th>#}
+{#                        <th rowspan="2">度量项</th>#}
+{#                        <th rowspan="2">优先级</th>#}
+{#                        <th colspan="5">度量指标值</th>#}
+{#                        <th rowspan="2">目标达成率</th>#}
+{#						 <th rowspan="2">度量指标计算公式说明</th>#}
+{#                        <th rowspan="2">目标达成率计算公式说明</th>#}
+{#					</tr>#}
+{#				     <tr>#}
+{#                        <th>下限</th>#}
+{#                        <th>均值</th>#}
+{#                        <th>上限</th>#}
+{#                        <th>目标值</th>#}
+{#						 <th>实际值</th>#}
+{#                    </tr>#}
+{#				</thead>#}
+{#				<tbody>#}
+{#<tr>#}
+{#                        <td>1</td>#}
+{#                        <td>测试用例覆盖密度（强测试）</td>#}
+{#                        <td>高</td>#}
+{#                        <td>0.8531</td>#}
+{#                        <td>14.0000</td>#}
+{#                        <td>27.1469</td>#}
+{#                        <td class="cell_input">#}
+{#                            <input type="tel"  id="a100" value="{{Ovallist.0}}" readOnly="true"></input>#}
+{#                        </td>#}
+{#	                     <td class="cell_input">#}
+{#                            <input type="tel" id="a101" value="{{actuallist.0}}" onmouseover="Inputs(this.id)" onkeyup="QAcount(100)"></input>#}
+{#                        </td>#}
+{#	                     <td class="cell_input">#}
+{#                            <input type="tel" id="a102" value="{{goalratelist.0}}"  onmouseover="Inputs(this.id)"></input>#}
+{#                        </td>#}
+{#                        <td>测试用例数/SFP</td>#}
+{#                        <td>实际值/目标值*100%</td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>2</td>#}
+{#                        <td>测试用例覆盖密度（弱测试）</td>#}
+{#                        <td>高</td>#}
+{#                        <td>1.2058</td>#}
+{#                        <td>6.0000</td>#}
+{#                        <td>10.7942</td>#}
+{#                        <td class="cell_input">#}
+{#                            <input type="tel" id="a103" value="{{Ovallist.1}}" readOnly="true"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a104" value="{{actuallist.1}}" onmouseover="Inputs(this.id)" onkeyup="QAcount(103)"></input>#}
+{#                        </td>#}
+{#	                     <td class="cell_input">#}
+{#                            <input type="tel" id="a105"  value="{{goalratelist.1}}" onmouseover="Inputs(this.id)"></input>#}
+{#                        </td>#}
+{#                        <td>测试用例数/SFP</td>#}
+{#                        <td>实际值/目标值*100%</td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>3</td>#}
+{#                        <td>测试用例评审的缺陷密度</td>#}
+{#                        <td>高</td>#}
+{#                        <td>0.0000</td>#}
+{#                        <td>0.0435</td>#}
+{#                        <td>0.0879</td>#}
+{#                        <td class="cell_input">#}
+{#                            <input type="tel" id="a106" value="{{Ovallist.2}}" readOnly="true"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a107" value="{{actuallist.2}}" onmouseover="Inputs(this.id)" onkeyup="QAcount(106)"></input>#}
+{#                        </td>#}
+{#	                     <td class="cell_input">#}
+{#                            <input type="tel" id="a108" value="{{goalratelist.2}}" onmouseover="Inputs(this.id)"></input>#}
+{#                        </td>#}
+{#                        <td>测试用例评审发现缺陷加权数/测试用例个数</td>#}
+{#                        <td>实际值/目标值*100%</td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>4</td>#}
+{#                        <td>准入测试用例通过率</td>#}
+{#                        <td>中</td>#}
+{#                        <td>/#}
+{#                        </td>#}
+{#                        <td>/#}
+{#                        </td>#}
+{#                        <td>/#}
+{#                        </td>#}
+{#                        <td class="cell_input">#}
+{#                            <input type="tel" id="a109" value="{{Ovallist.3}}" readOnly="true"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a110" value="{{actuallist.3}}" onmouseover="Inputs(this.id)" onkeyup="QAcount(109)"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a111" value="{{goalratelist.3}}" onmouseover="Inputs(this.id)"></input>#}
+{#                        </td>#}
+{#                        <td>准入用例通过总数/准入测试用例执行总数)</td>#}
+{#                        <td>实际值/目标值*100%</td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>5</td>#}
+{#                        <td>测试阶段单位规模工期（强测试）</td>#}
+{#                        <td>高</td>#}
+{#                        <td>0.0000</td>#}
+{#                        <td>0.2339</td>#}
+{#                        <td>0.6998</td>#}
+{#                        <td class="cell_input">#}
+{#                            <input type="tel" id="a112" value="{{Ovallist.4}}" readOnly="true"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a113" value="{{actuallist.4}}" onmouseover="Inputs(this.id)" onkeyup="QAcount(112)"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a114" value="{{goalratelist.4}}" onmouseover="Inputs(this.id)"></input>#}
+{#                        </td>#}
+{#                        <td>测试阶段实际工期（工作日）/SFP</td>#}
+{#                        <td>实际值/目标值*100%</td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>6</td>#}
+{#                        <td>测试阶段单位规模工作量（强测试）</td>#}
+{#                        <td>高</td>#}
+{#                        <td>0.0900</td>#}
+{#                        <td>0.8096</td>#}
+{#                        <td>1.5290</td>#}
+{#                        <td class="cell_input">#}
+{#                            <input type="tel" id="a115" value="{{Ovallist.5}}" readOnly="true"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a116" value="{{actuallist.5}}" onmouseover="Inputs(this.id)" onkeyup="QAcount(115)"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a117" value="{{goalratelist.5}}" onmouseover="Inputs(this.id)"></input>#}
+{#                        </td>#}
+{#                        <td>测试阶段实际工作量/SFP</td>#}
+{#                        <td>实际值/目标值*100%</td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>7</td>#}
+{#                        <td>测试阶段进度偏差（强测试）</td>#}
+{#                        <td>高</td>#}
+{#                        <td>-0.3000</td>#}
+{#                        <td>0.1122</td>#}
+{#                        <td>0.5000</td>#}
+{#                        <td class="cell_input">#}
+{#                            <input type="tel" id="a201" value="{{Ovallist.6}}" readOnly="true"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a202" value="{{actuallist.6}}" onmouseover="Inputs(this.id)" onkeyup="QAcount(201)"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a203" value="{{goalratelist.6}}" onmouseover="Inputs(this.id)"></input>#}
+{#                        </td>#}
+{#                        <td>（测试阶段实际结束时间-测试阶段计划结束时间）/（测试阶段计划结束时间-测试阶段计划开始时间）*100%</td>#}
+{#                        <td>实际值/目标值*100%</td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>8</td>#}
+{#                        <td>测试执行轮次（强测试）</td>#}
+{#                        <td>高</td>#}
+{#                        <td>1.1736</td>#}
+{#                        <td>5.000</td>#}
+{#                        <td>8.8264</td>#}
+{#                        <td class="cell_input">#}
+{#                            <input type="tel" id="a204" value="{{Ovallist.7}}" readOnly="true"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a205" value="{{actuallist.7}}" onmouseover="Inputs(this.id)" onkeyup="QAcount(204)"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a206" value="{{goalratelist.7}}" onmouseover="Inputs(this.id)"></input>#}
+{#                        </td>#}
+{#                        <td>实际执行的测试轮次</td>#}
+{#                         <td>实际值/目标值*100%</td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>9</td>#}
+{#                        <td>测试缺陷密度（强测试）</td>#}
+{#                        <td>高</td>#}
+{#                        <td>0</td>#}
+{#                        <td>1.9941</td>#}
+{#                        <td>4.9096</td>#}
+{#                        <td class="cell_input">#}
+{#                            <input type="tel" id="a207" value="{{Ovallist.8}}" readOnly="true"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a208" value="{{actuallist.8}}" onmouseover="Inputs(this.id)" onkeyup="QAcount(207)"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a209" value="{{goalratelist.8}}" onmouseover="Inputs(this.id)"></input>#}
+{#                        </td>#}
+{#                        <td>测试发现的缺陷加权数/SFP</td>#}
+{#                        <td>实际值/目标值*100%</td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>10</td>#}
+{#                        <td>测试阶段单位规模工期（弱测试）</td>#}
+{#                        <td>高</td>#}
+{#                        <td>0</td>#}
+{#                        <td>0.1405</td>#}
+{#                        <td>0.4198</td>#}
+{#                        <td class="cell_input">#}
+{#                            <input type="tel" id="a210" value="{{Ovallist.9}}" readOnly="true"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a211" value="{{actuallist.9}}" onmouseover="Inputs(this.id)" onkeyup="QAcount(210)"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a212" value="{{goalratelist.9}}"  onmouseover="Inputs(this.id)"></input>#}
+{#                        </td>#}
+{#                        <td>测试阶段实际工期（工作日）/SFP</td>#}
+{#                        <td>实际值/目标值*100%</td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>11</td>#}
+{#                        <td>测试阶段单位规模工作量（弱测试）</td>#}
+{#                        <td>高</td>#}
+{#                        <td>0</td>#}
+{#                        <td>0.7636</td>#}
+{#                        <td>1.6800</td>#}
+{#                        <td class="cell_input">#}
+{#                            <input type="tel" id="a213" value="{{Ovallist.10}}" readOnly="true"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a214" value="{{actuallist.10}}" onmouseover="Inputs(this.id)" onkeyup="QAcount(213)"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a215" value="{{goalratelist.10}}" onmouseover="Inputs(this.id)"></input>#}
+{#                        </td>#}
+{#                        <td>测试阶段实际工作量/SFP</td>#}
+{#                        <td>实际值/目标值*100%</td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>12</td>#}
+{#                        <td>测试阶段进度偏差（弱测试）</td>#}
+{#                        <td>高</td>#}
+{#                        <td>0</td>#}
+{#                        <td>0.0167</td>#}
+{#                        <td>0.2833</td>#}
+{#                        <td class="cell_input">#}
+{#                            <input type="tel" id="a216" value="{{Ovallist.11}}" readOnly="true"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a217" value="{{actuallist.11}}" onmouseover="Inputs(this.id)" onkeyup="QAcount(216)"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a218" value="{{goalratelist.11}}" onmouseover="Inputs(this.id)"></input>#}
+{#                        </td>#}
+{#                        <td>（测试阶段实际结束时间-测试阶段计划结束时间）/（测试阶段计划结束时间-测试阶段计划开始时间）*100%</td>#}
+{#                        <td>实际值/目标值*100%</td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>13</td>#}
+{#                        <td>试执行轮次（弱测试）</td>#}
+{#                        <td>高</td>#}
+{#                        <td>0.3175</td>#}
+{#                        <td>4</td>#}
+{#                        <td>7.6825</td>#}
+{#                       <td class="cell_input">#}
+{#                            <input type="tel" id="a219" value="{{Ovallist.12}}" readOnly="true"></input>#}
+{#                        </td>#}
+{#						 <td class="cell_input">#}
+{#                            <input type="tel" id="a220" value="{{actuallist.12}}" onmouseover="Inputs(this.id)" onkeyup="QAcount(219)"></input>#}
+{#                        </td>#}
+{#						 <td class="cell_input">#}
+{#                            <input type="tel" id="a221" value="{{goalratelist.12}}" onmouseover="Inputs(this.id)"></input>#}
+{#                        </td>#}
+{#                        <td>实际执行的测试轮次</td>#}
+{#                        <td>实际值/目标值*100%</td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>14</td>#}
+{#                        <td>测试缺陷密度（弱测试）</td>#}
+{#                        <td>高</td>#}
+{#                        <td>0</td>#}
+{#                        <td>0.5120</td>#}
+{#                        <td>1.4520</td>#}
+{#                        <td class="cell_input">#}
+{#                            <input type="tel" id="a222" value="{{Ovallist.13}}" readOnly="true"></input>#}
+{#                        </td>#}
+{#						 <td class="cell_input">#}
+{#                            <input type="tel" id="a223" value="{{actuallist.13}}" onmouseover="Inputs(this.id)" onkeyup="QAcount(222)"></input>#}
+{#                        </td>#}
+{#						 <td class="cell_input">#}
+{#                            <input type="tel" id="a224" value="{{goalratelist.13}}" onmouseover="Inputs(this.id)"></input>#}
+{#                        </td>#}
+{#                        <td>测试发现的缺陷加权数/SFP</td>#}
+{#                        <td>实际值/目标值*100%</td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>15</td>#}
+{#                        <td>遗留缺陷率</td>#}
+{#                        <td>高</td>#}
+{#                        <td>0</td>#}
+{#                        <td>0.0296</td>#}
+{#                        <td>0.0835</td>#}
+{#                        <td class="cell_input">#}
+{#                            <input type="tel" id="a225" value="{{Ovallist.14}}" readOnly="true"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a226" value="{{actuallist.14}}" onmouseover="Inputs(this.id)" onkeyup="QAcount(225)"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a227" value="{{goalratelist.14}}" onmouseover="Inputs(this.id)"></input>#}
+{#                        </td>#}
+{#                        <td>（测试阶段遗留缺陷加权数+验收阶段发现缺陷加权数）/（测试缺陷加权数+验收阶段发现缺陷加权数+代码走查发现缺陷加权数）</td>#}
+{#                        <td>实际值/目标值*100%</td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>16</td>#}
+{#                        <td>测试用例有效率</td>#}
+{#                        <td>中</td>#}
+{#                        <td>0</td>#}
+{#                        <td>0.5120</td>#}
+{#                        <td>1.4520</td>#}
+{#                        <td class="cell_input">#}
+{#                            <input type="tel" id="a229" value="{{Ovallist.15}}" readOnly="true"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a230" value="{{actuallist.15}}" onmouseover="Inputs(this.id)" onkeyup="QAcount(229)"></input>#}
+{#                        </td>#}
+{#						<td class="cell_input">#}
+{#                            <input type="tel" id="a231" value="{{goalratelist.15}}" onmouseover="Inputs(this.id)"></input>#}
+{#                        </td>#}
+{#                        <td>有效缺陷加权数/（设计用例数+引用的公共用例数）</td>#}
+{#                        <td>实际值/目标值*100%</td>#}
+{#                    </tr>#}
+{##}
+{#				</tbody>#}
+{#			</table>#}
+{#		</div>#}
+{#	</div>#}
+{#</div>#}
+
+</body>
+<script language="javascript">
+function counta(num,j,x,y,z){
+ var sum=0;
+ var obj=document.getElementsByName("text"+num);
+ for(var i=j;i<j+8;i++)
+ {
+   sum+=parseInt(obj[i].value);
+   document.getElementById(x).value=sum;
+  document.getElementById(y).value=parseFloat(z*sum).toFixed(1);
+ }
+}
+function countb(nun,w,q,u,l){
+ var countp=0;
+ var countc=0;
+ var countg=0;
+ var obj=document.getElementsByName("text"+nun);
+ var obc=document.getElementsByName("txt"+nun);
+ var obg=document.getElementsByName("tct"+nun);
+ for(var c=w;c<w+33;c=c+8)
+ {
+   countp+=parseInt(obj[c].value);
+   document.getElementById(q).value=countp;
+   countc=parseInt(obc[0].value)+parseInt(obc[1].value)+parseInt(obc[2].value)+parseInt(obc[3].value)+parseInt(obc[4].value);
+   document.getElementById(u).value=countc;
+   countg=parseFloat(obg[0].value)+parseFloat(obg[1].value)+parseFloat(obg[2].value)+parseFloat(obg[3].value)+parseFloat(obg[4].value);
+   document.getElementById(l).value=countg;
+
+  }
+}
+        function insertcol() {
+            var syck = {{ syck|safe }};
+            var c_num;
+            var table_w = document.getElementById("table_1");
+            c_num=syck;
+            var lenp=table_w.rows[0].cells.length;
+                if(lenp<3){
+
+            for(var j=1;j<c_num+3;j++){
+              for(var i=0;i<table_w.rows.length;i++){
+		      var wTd = table_w.rows[i].insertCell();
+		        if (j<c_num+1){
+		        //wTd.innerHTML=i==0?("测试版本"+j):("");
+		        wTd.innerHTML=i==0?('<input style="border:0px;width:120px"  type="text" name="text1" id="00"  value="TL_xx_01">'):("");
+		      }
+		       else{
+	              if (j==c_num+1){
+	              wTd.innerHTML=i==0?("个数总计"):("");
+	         }
+	              if (j>c_num+1){
+	              wTd.innerHTML=i==0?("加权总计"):("");
+     }
+     }
+	}
+	}
+ }
+                      if(lenp>2){
+                          alert("请重置后生成新数据");
+ }
+        }
+         function delcol() {
+            var table_w = document.getElementById("table_1");
+            var lenp=table_w.rows[0].cells.length;
+            for(var j=2;j<lenp;j++){
+               for(var i=0;i<table_w.rows.length;i++){
+		         table_w.rows[i].deleteCell(-1);
+                }
+		       }
+
+ }
+          function bugval() {
+            var syck = {{ syck|safe }};
+            var List = {{ List|safe }};
+            var Listp = {{ Listp|safe }};
+            var Listyl = {{ Listyl|safe }};
+            var nbuglist = {{nbuglist|safe }};
+            var table_w = document.getElementById("table_1");
+            c_num=syck;
+            var lenp=table_w.rows[0].cells.length;
+                for(var i=1;i<table_w.rows.length;i++){
+                    for(var j=1;j<c_num+3;j++){
+                       if (i==1){
+		                  table_w.rows[i].cells[j+1].innerHTML=List[j-1][i-1];
+                   }
+                       if (i>1&&i<7&&j<c_num+3){
+                            table_w.rows[i].cells[j].innerHTML=List[j-1][i-1];
+		           }
+		               if (i==7){
+		                    table_w.rows[i].cells[j+1].innerHTML=Listp[j-1][i-7];
+                   }
+                       if (i>7&&i<13&&j<c_num+3){
+                            table_w.rows[i].cells[j].innerHTML=Listp[j-1][i-7];
+		           }
+		               if (i>13){
+                           table_w.rows[i].cells[j].innerHTML="NA";
+                   }
+                   }
+		         }
+		       for(var j=1;j<c_num+3;j++){
+		          table_w.rows[13].cells[j].innerHTML=nbuglist[j-1];
+		       }
+		         //table_w.rows[15].cells[c_num].innerHTML=Listyl[0];
+		         for(var j=c_num+1;j<c_num+3;j++){
+		          table_w.rows[15].cells[j].innerHTML=Listyl[j-c_num-1];
+		       }
+              YLL=pcentcount(table_w.rows[15].cells[c_num+1].innerHTML,table_w.rows[12].cells[c_num+1].innerHTML);
+              YLJQ=pcentcount(table_w.rows[15].cells[c_num+2].innerHTML,table_w.rows[12].cells[c_num+2].innerHTML);
+              table_w.rows[16].cells[c_num+2].innerHTML=YLJQ;
+		      table_w.rows[16].cells[c_num+1].innerHTML=YLL;
+ }
+function Inputs(s){
+	obj =document.getElementById(s);
+	obj.focus();
+	obj.select();
+}
+function pcentcount(cnt1,cnt2) {
+return (Math.round(cnt1 / cnt2 * 10000) / 100.00 + "%");
+}
+function Inputfresh(x){
+	obj=parseInt(document.getElementById(x).value);
+return obj;
+}
+function getfresh(x){
+	var p=parseInt(document.getElementById(x).value);
+var obt=Inputfresh(x);
+if (obt!=p){
+obt=parseInt(document.getElementById(x).value);
+}
+return obt;
+}
+function QAcount1(i) {
+            var table_c = document.getElementById("tablec");
+            cn1=table_c.rows[i].cells[7].innerHTML;
+            cn2=table_c.rows[i].cells[6].innerHTML;
+               // if (cn1!==""&&cn2!==""){
+             cn3=pcentcount(cn1,cn2);
+               table_c.rows[i].cells[8].innerHTML=cn3;
+            //}
+
+ }
+ function QAcount(i) {
+            var cn1=document.getElementById("a"+i).value;
+            var cn2=document.getElementById("a"+(parseInt(i)+1)).value;
+            if (cn1!==""&&cn2!==""){
+            var cn3=pcentcount(cn2,cn1);
+               document.getElementById("a"+(parseInt(i)+2)).value=cn3;
+               }
+          //  if (cn1==""||cn2==""){
+         //   document.getElementById("a"+(parseInt(i)+2)).value="";
+          //  }
+            else {
+              document.getElementById("a"+(parseInt(i)+2)).value="null%";
+              }
+ }
+ <!--function oval() {   //目标值-->
+            <!--var Ovallist = {{ Ovallist|safe }};-->
+            <!--var table_c = document.getElementById("tablec");-->
+            <!--for(var i=100;i<108;i++){-->
+                <!--&lt;!&ndash;table_c.rows[i].cells[7].innerHTML=Ovallist[i-2];&ndash;&gt;-->
+                <!--document.getElementById("a"+i).value=Ovallist[i-100];-->
+                <!--}-->
+ //$(function(){           //base64串
+//var url = $('.test img').attr("src");
+//alert(url);
+//});
+</script>
+</html>

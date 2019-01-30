@@ -1,0 +1,483 @@
+#------------------------------------
+#作者：陈镜旭  日期：2018年10月17
+#-----------------------------------
+#订单阶段三:
+
+#联系人填写-- 20181015 chenjingxu
+#0
+-
+  byType: id
+  cval: com.giveu.corder:id/top_tab_center_title
+  optype: el
+  index:
+  text:
+#1
+-
+  byType: id
+  cval: com.giveu.corder:id/et_edit_view
+  optype: send_keys
+  index: 0
+  text: 独孤九剑
+
+#2
+-
+  byType: id
+  cval: com.giveu.corder:id/et_edit_view
+  optype: send_keys
+  index: 1
+  text: 17665412567
+
+#3
+-
+  byType: id
+  cval: com.giveu.corder:id/et_edit_view
+  optype: send_keys
+  index: 2
+  text: 东方不败
+
+#4
+-
+  byType: id
+  cval: com.giveu.corder:id/et_edit_view
+  optype: send_keys
+  index: 3
+  text: 17665412569
+
+#5
+-
+  byType: id
+  cval: com.giveu.corder:id/et_edit_view
+  optype: send_keys
+  index: 4
+  text: 虞姬
+
+#6
+-
+  byType: id
+  cval: com.giveu.corder:id/et_edit_view
+  optype: send_keys
+  index: 5
+  text: 17665412568
+
+#7
+-
+  byType: id
+  cval: com.giveu.corder:id/iv_change_contacts
+  optype: click
+  index: 0
+  text:
+
+#8
+-
+  byType: id
+  cval: com.giveu.corder:id/iv_change_contacts
+  optype: click
+  index: 1
+  text:
+
+#9
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_choose_right
+  optype: click
+  index: 0
+  text:
+
+#10
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_choose_right
+  optype: click
+  index: 1
+  text:
+
+#11
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_choose_title
+  optype: el
+  index:
+  text: 选择与本人关系
+
+#12
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("兄弟")
+  optype: click
+  index:
+  text:
+
+#13 下一步
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_next
+  optype: click
+  index:
+  text:
+
+#绑定银行卡第一步填写银行卡号
+#14 银行卡号输入框
+-
+  byType: id
+  cval: com.giveu.corder:id/et_cardNumber
+  optype: send_keys
+  index:
+  text:
+
+#15 下一步
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_next
+  optype: click
+  index:
+  text:
+
+#16 查看支持的银行
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_supported_bank
+  optype: click
+  index:
+  text:
+
+#17 支持的银行列表
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_bank
+  optype:
+  index: 0
+  text:
+
+#18 左上角返回按钮 可公用
+-
+  byType: id
+  cval: com.giveu.corder:id/top_left_image
+  optype: click
+  index:
+  text:
+
+#19 右上角返回按钮 可公用
+-
+  byType: id
+  cval: com.giveu.corder:id/top_tab_right_image
+  optype: click
+  index:
+  text:
+#----------绑定银行卡第二步
+
+#20 持卡人
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_owner
+  optype:
+  index:
+  text: 大师傅
+
+#21 银行卡号
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_cardNumber
+  optype: click
+  index:
+  text:
+
+#22 银行名称
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_bankName
+  optype:
+  index:
+  text: 农业银行
+
+#23 支行地址
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_bankBranch
+  optype: click
+  index:
+  text:
+
+#24 银行预留手机号
+-
+  byType: id
+  cval: com.giveu.corder:id/et_phone
+  optype:
+  index:
+  text: 15400056544
+
+#25 同意协议代扣
+-
+  byType: id
+  cval: com.giveu.corder:id/cb_read
+  optype: click
+  index:
+  text:
+
+#26 关闭地址对话框 可公用
+-
+  byType: id
+  cval: com.giveu.corder:id/iv_dialog_close
+  optype: click
+  index:
+  text:
+
+#27 地址对话框标题 可公用
+-
+  byType: -android uiautomator
+  cval: cnew UiSelector().text("所在地区")
+  optype: el
+  index:
+  text:
+
+#28 地址列表 可公用
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_address
+  optype:
+  index: 0
+  text:
+
+#绑定银行卡第三步 填写验证码
+#29 银行卡信息 5项
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_right
+  optype:
+  index: 0
+  text:
+
+#30 发送验证码
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_sendCode
+  optype: click
+  index:
+  text:
+
+#31 验证码输入框
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_right
+  optype: send_keys
+  index: 0
+  text:
+
+#其它信息
+#32 点击选择内部评定代码
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_innerCode
+  optype: click
+  index:
+  text:
+
+#33 内部评定代码
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("1")
+  optype: click
+  index:
+  text:
+
+#34 评价
+-
+  byType: id
+  cval: com.giveu.corder:id/et_remark
+  optype: send_keys
+  index:
+  text: automation jugde
+
+#35 跳过京东认证,富数认证，运营商认证
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_skip
+  optype: click
+  index:
+  text:
+
+#小问卷-------------------------
+#36 借贷次数
+-
+  byType: id
+  cval: com.giveu.corder:id/et_time
+  optype: send_keys
+  index:
+  text: 3
+
+#37 获知即有分期途径 com.giveu.corder:id/cb_check
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("微信朋友圈")
+  optype: click
+  index:
+  text:
+#  byType: id
+#  cval: com.giveu.corder:id/cb_check
+#  optype: click
+#  index: 0
+#  text:
+
+#影像证明
+#38 获知即有分期途径
+-
+  byType: id
+  cval: com.giveu.corder:id/iv_photo
+  optype: click
+  index: 0
+  text:
+
+#照相机
+#39
+-
+  byType: xpath
+  cval: //android.widget.ImageView[@content-desc="拍摄"]
+  optype: click
+  index:
+  text:
+
+#40
+-
+  byType: xpath
+  cval: //android.widget.ImageView[@resource-id="com.android.camera:id/v6_btn_done"]
+  optype: click
+  index:
+  text:
+
+#41 提交影像资料
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_commit
+  optype: click
+  index:
+  text:
+
+#输入登录密码进行验证弹窗
+#42 密码输入框
+-
+  byType: id
+  cval: com.giveu.corder:id/et_pwd
+  optype: send_keys
+  index:
+  text: 123456
+
+#43 确认
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_confirm
+  optype: click
+  index:
+  text:
+
+#44 关闭弹窗
+-
+  byType: id
+  cval: com.giveu.corder:id/iv_dismiss
+  optype: click
+  index:
+  text:
+
+#45 显示密码
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_showPwd
+  optype: click
+  index:
+  text:
+
+
+# 提交成功页
+#46
+-
+  byType: id
+  cval: com.giveu.corder:id/top_tab_center_title
+  optype: el
+  index:
+  text:
+
+#47
+-
+  byType: id
+  cval: ccom.giveu.corder:id/tv_finish
+  optype: el
+  index:
+  text:
+
+#48
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("同事-1")
+  optype: click
+  index:
+  text:
+
+#-----银行支行地址
+#49
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("海南")
+  optype: click
+  index:
+  text:
+#50
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("三亚")
+  optype: click
+  index:
+  text:
+
+
+#51 小问卷下一步
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_next
+  optype: click
+  index:
+  text:
+
+#52 弹窗输入6228481359515816576
+-
+  byType: id
+  cval: com.giveu.corder:id/et_brand
+  optype: send_keys
+  index:
+  text: 6217000333344440001
+#53
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("确定")
+  optype: click
+  index:
+  text:
+#54输入验证吗
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("请输入验证码")
+  optype: send_keys
+  index:
+  text:
+#55 获取验证码
+-
+  byType: -android uiautomator
+  cval: new UiSelector().text("获取验证码")
+  optype: click
+  index:
+  text:
+# 56  获取合同名称
+-
+  byType: id
+  cval: com.giveu.corder:id/tv_name_front
+  optype: send_keys
+  index:
+  text:
+
+
+
+
+
+
+
+
+
+
+
